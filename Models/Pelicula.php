@@ -12,17 +12,15 @@ namespace Models;
  	private $titulo;
     private $hora_inicio;
     private $duracion;
+    private $sinopsis;
+    private $poster_link;
+    private $lenguaje;
+    private $fecha_lanzamiento;
  	
  	function __construct()
  	{
  	
  	}
-
-
-
-   
-    
-
 
 
    
@@ -71,6 +69,62 @@ namespace Models;
     public function setDuracion($duracion)
     {
         $this->duracion = $duracion;
+    }
+
+
+    public function getSinopsis()
+    {
+        return $this->sinopsis;
+    }
+
+    
+    public function setSinopsis($sinopsis)
+    {
+        $this->sinopsis = $sinopsis;
+
+        return $this;
+    }
+
+    
+    public function getPosterPath()
+    {
+        return $this->poster_path;
+    }
+
+    
+    public function setPosterPath($poster_path)
+    {
+        $this->poster_path = $poster_path;
+
+        return $this;
+    }
+
+    
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    
+    public function getReleaseDate()
+    {
+        return $this->release_date;
+    }
+
+    
+    public function setReleaseDate($release_date)
+    {
+        $this->release_date = $release_date;
+
+        return $this;
     }
 } 
 
