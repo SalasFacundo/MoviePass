@@ -10,6 +10,7 @@ namespace Models;
  	
  	private $numero_sala;
  	private $capacidad;
+    private $peliculas;
  	
  	function __construct()
  	{
@@ -44,15 +45,17 @@ namespace Models;
 
 
 
+    public function getPeliculas()
+    {
+        return $this->peliculas;
+    }
+
+   
+    public function setPeliculas($peliculas)
+    {
+        $this->peliculas = $peliculas;
+    }
 } 
-
-
-	$sala=new Sala();
-	$sala->setCapacidad("40");
-	$sala->setNumeroSala("1");
-
-	var_dump($sala);
 	
-		
 
 ?>
