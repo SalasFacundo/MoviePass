@@ -1,0 +1,26 @@
+[
+    {
+        "numeroSala": "4",
+        "capacidad": "250"
+    },
+    {
+        "numeroSala": "2",
+        "capacidad": "120"
+    },
+    {
+        "numeroSala": "4",
+        "capacidad": "200"
+    },
+    {
+        "numeroSala": "9",
+        "capacidad": "1000"
+    },
+    {
+        "numeroSala": "9",
+        "capacidad": "1000"
+    },
+    {
+        "numeroSala": "9",
+        "capacidad": "1000"
+    }
+]
