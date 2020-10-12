@@ -28,8 +28,6 @@ namespace Models;
     }
 
 
-
-
     
     public function getNombreCine()
     {
