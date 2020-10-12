@@ -32,6 +32,15 @@
             $this->showAddView();
         }
 
+        public function removeAdmin ($user){
+
+            $this->adminDao->eliminarAdmin($user);
+             
+            $this->showAddView();
+            
+
+        }
+
     }
 
 

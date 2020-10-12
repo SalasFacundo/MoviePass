@@ -1,12 +1,12 @@
 [
     {
-        "idCine": "1",
-        "nombreCine": "El de cordoba",
-        "salas": "6"
-    },
-    {
         "idCine": "2223",
         "nombreCine": "Otro Cine",
+        "salas": "3"
+    },
+    {
+        "idCine": "22",
+        "nombreCine": "Otro Cine mas grande",
         "salas": "3"
     }
 ]

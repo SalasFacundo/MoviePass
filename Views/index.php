@@ -43,7 +43,30 @@
                 <button type="submit">Agregar</button>
                 
             </form>
+            <br>
+            <h2>Borrar Admin</h2>
+            <form action="<?= FRONT_ROOT ?>/Admin/removeAdmin" method="post" >
+                
+                <p>
+                    <label for="user">User Name</label>
+                    <input type="text" name="user" min=0 max=5>
+                </p>
 
+                <button type="submit">Borrar</button>
+                
+            </form>
+            <h2>Borrar Cine</h2>
+            <form action="<?= FRONT_ROOT ?>/Cine/removeCine" method="post" >
+                
+                <p>
+                    <label for="user">Ingrese el ID:</label>
+                    <input type="number" name="user" min=0>
+                </p>
+
+                <button type="submit">Borrar</button>
+                
+            </form>
+            
         </div>
         
         
