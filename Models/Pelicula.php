@@ -81,52 +81,49 @@ namespace Models;
     public function setSinopsis($sinopsis)
     {
         $this->sinopsis = $sinopsis;
-
-        return $this;
     }
 
     
-    public function getPosterPath()
+    public function getPosterLink()
     {
-        return $this->poster_path;
+        return $this->poster_link;
     }
 
     
-    public function setPosterPath($poster_path)
+    public function setPosterLink($poster_link)
     {
-        $this->poster_path = $poster_path;
-
-        return $this;
+        $this->poster_link = $poster_link;
     }
 
     
-    public function getLanguage()
+    public function getLenguaje()
     {
-        return $this->language;
+        return $this->lenguaje;
     }
 
     
-    public function setLanguage($language)
+    public function setLenguaje($lenguaje)
     {
-        $this->language = $language;
-
-        return $this;
+        $this->lenguaje = $lenguaje;
     }
 
     
-    public function getReleaseDate()
+    public function getFechaLanzamiento()
     {
-        return $this->release_date;
+        return $this->fecha_lanzamiento;
     }
 
     
-    public function setReleaseDate($release_date)
+    public function setFechaLanzamiento($fecha_lanzamiento)
     {
-        $this->release_date = $release_date;
-
-        return $this;
+        $this->fecha_lanzamiento = $fecha_lanzamiento;
     }
+
+
+
 } 
+    
+
 
 
 ?>
