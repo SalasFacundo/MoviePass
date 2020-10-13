@@ -19,16 +19,16 @@ class AdminDAO {
 
     public function Add($user)
     {
-        $this->RetrieveData();
+        $this->retrieveData();
 
         array_push($this->userList,$user);
 
-        $this->SaveData();
+        $this->saveData();
     }
 
     public function GetAll()
     {
-        $this->RetrieveData();
+        $this->retrieveData();
 
         var_dump($this->userList);
 
@@ -36,10 +36,36 @@ class AdminDAO {
         
     }
 
-    
+    public function posAdmin($user){
+        
+        $pos=-1;
+
+        for($i=0; $i < count($this->userList); $i++){
+            if($this->userList[$i]->getUser()===$user){
+                $pos=$i;
+
+            } 
+        }
+
+        return $pos;
+    }
 
 
-    private function SaveData()
+    public function eliminarAdmin($id)
+    {
+        $this->RetrieveData();
+
+        $pos=$this->posAdmin($id);
+
+            if ($pos!=-1) {
+                unset($this->userList[$pos]);  
+            }
+                  
+        $this->SaveData();   
+
+    }
+
+    private function saveData()
     {
 
         $arrayToDecode= array();
@@ -61,7 +87,7 @@ class AdminDAO {
     }
 
 
-    private function RetrieveData()
+    private function retrieveData()
     {
         $this->userList = array();
 
@@ -89,6 +115,8 @@ class AdminDAO {
         }
 
     }
+
+
 
 
        

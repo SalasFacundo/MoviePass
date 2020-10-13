@@ -32,6 +32,15 @@
             $this->showAddView();
         }
 
+        public function removeCine ($id){
+
+            $this->cineDao->eliminarCine($id);
+             
+            $this->showAddView();
+            
+
+        }
+
     }
 
 

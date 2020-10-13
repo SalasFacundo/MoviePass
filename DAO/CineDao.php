@@ -39,6 +39,38 @@
             return $this->fileName;
         }
 
+
+
+        public function posCine($id){
+        
+            $pos=-1;
+    
+            for($i=0; $i < count($this->cinemaList); $i++){
+                if($this->cinemaList[$i]->getIdCine()===$id){
+                    $pos=$i;
+    
+                } 
+            }
+    
+            return $pos;
+        }
+
+
+
+    public function eliminarCine($id)
+    {
+        $this->readFile();
+
+        $pos=$this->posCine($id);
+
+            if ($pos!=-1) {
+                unset($this->cinemaList[$pos]);  
+            }
+                  
+        $this->SaveData();   
+
+    }
+
         function saveData(){
             $arrayToEncode = array();
 
