@@ -69,6 +69,28 @@
                   
         $this->SaveData();   
 
+    
+    }
+
+    function agregarSalaAlCine ($sala, $cineId){
+
+        $this->readFile();
+
+        $pos = $this->posCine($cineId);
+        
+        if($pos != -1){
+            // Falta checkear que el numero de sala no se repita
+            $this->cinemaList[$pos]->addSala($sala);
+
+  
+            //var_dump($this->cinemaList[$pos]->getSalas());
+           
+            $this->saveData();
+
+
+        }
+
+
     }
 
         function saveData(){

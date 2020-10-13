@@ -6,15 +6,12 @@ namespace Models;
  {
  	private $id_cine;
  	private $nombre_cine;
- 	private $salas;
+ 	private $salas = array();
 
  	function __construct()
  	{
  		
  	}
-
-    
-
 
     public function getIdCine()
     {
@@ -53,6 +50,12 @@ namespace Models;
         $this->salas = $salas;
     }
 
+    public function addSala($sala){
+        
+        array_push($this->salas,$sala);
+
+
+    }
 
 } 
 
