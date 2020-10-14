@@ -1,22 +1,16 @@
 [
     {
-        "name": "Diego",
-        "user": "DiegoUllua",
-        "password": 1111
-    },
+        "userName": "nico",
+        "password": "123"
+    }
+    ,
     {
-        "name": "Facu",
-        "user": "FacundoSalas",
-        "password": "2222"
-    },
+        "userName": "facu",
+        "password": "123"
+    }
+    ,
     {
-        "name": "Nico",
-        "user": "NicoJuarez",
-        "password": "3333"
-    },
-    {
-        "name": "asd",
-        "user": "FacundoSalas",
-        "password": "222"
+        "userName": "diego",
+        "password": "123"
     }
 ]

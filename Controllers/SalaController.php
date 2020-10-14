@@ -5,7 +5,9 @@
     use DAO\SalaDao as SalaDao;
     use Models\Sala as Sala;
 
-    class SalaController{
+    class SalaController
+    {
+
         private $salaDao;
 
         public function __construct(){

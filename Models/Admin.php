@@ -2,32 +2,21 @@
 
     namespace Models;
     
-    class Admin{
+    
 
-        private $name;
-        private $user;
+    class Admin
+    {
+        private $adminName;
         private $password;
 
-        public function getName()
+        public function getAdminName()
         {
-            return $this->name;
+            return $this->adminName;
         }
 
-        public function setName($userName)
+        public function setAdminName($adminName)
         {
-            $this->name = $userName;
-        }
-
-
-        public function getUser()
-        {
-            return $this->user;
-        }
-
-        public function setUser($user)
-        {
-            $this->user = $user;
-        
+            $this->adminName = $adminName;
         }
 
         public function getPassword()
@@ -39,26 +28,11 @@
         {
             $this->password = $password;
         }
-        
     }
-
-
-?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
 
 
 ?>
+
+
