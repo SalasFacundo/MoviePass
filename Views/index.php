@@ -78,7 +78,7 @@
 
         <div class="col-2">
 
-            <a href="<?= FRONT_ROOT ?>/Home/AdminHome" class="btn btn-success" role="button" aria-pressed="true">IR AL ADMINHOME</a>
+            <a href="<?= FRONT_ROOT ?>Home/AdminHome" class="btn btn-success" role="button" aria-pressed="true">IR AL ADMINHOME</a>
         
         
             </div>
