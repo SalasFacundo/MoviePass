@@ -28,22 +28,11 @@
     
         <div class="row">
 
-        <div class="col-4"></div>
+            <div class="col-4"></div>
 
-        <div class="col-4">
+            <div class="col-4"><h2>ESTOY EN LA PAGINA DE ADMINITRACION DE EMPLEADOS</h2> </div>
 
-        <h2>ESTOY EN LA PAGINA DE ADMINITRACION DE EMPLEADOS</h2>
-
-
-        </div>
-
-        <div class="col-4">
-
-       
-
-
-
-        </div>
+            <div class="col-4"></div>
 
         </div>
 
@@ -53,33 +42,8 @@
 
     </div>
 
-
-    <div class="row">
-
-    <div class="col-4"></div>
-    <div class="col-4">
-        
-    <div class="tab-content">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">..ASDASD.</div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">.12312312312</div>
-            <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-tab">.123123</div>
-            <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">.123123</div>
-
-            <h2>nico</h2>
-    </div>
-
-
-
-
-
-    </div>
-    <div class="col-4"></div>
 
     
-
-
-    </div>
-
 
 
 

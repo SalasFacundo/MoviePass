@@ -34,77 +34,22 @@
             </div>
 
 
-
             <div class="row">
 
                 <div class="col-4"></div>
                 <div class="col-4">
 
-                    <form action="">
-
-                    <div class="form-group row">
-                        <label for="" class="col-sm-2 col-form-label">1</label>
-                        <div class="col-sm-10">
-                        <input type="text" class="form-control" id="">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="" class="col-sm-2 col-form-label">2</label>
-                        <div class="col-sm-10">
-                        <input type="text" class="form-control" id="">
-                        </div>
-                    </div>
 
 
-                    <div class="form-group row">
-                        <label for="" class="col-sm-2 col-form-label">3</label>
-                        <div class="col-sm-10">
-                        <input type="text" class="form-control" id="">
-                        </div>
-                    </div>
+                
+
                     
-                    <div class="form-group row">
-                        <label for="" class="col-sm-2 col-form-label">4</label>
-                        <div class="col-sm-10">
-                        <input type="text" class="form-control" id="">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="" class="col-sm-2 col-form-label">5</label>
-                        <div class="col-sm-10">
-                        <input type="text" class="form-control" id="">
-                        </div>
-                    </div>  
-
-
-                    <div class="form-group row">
-                        <div class="col-sm-10">
-                        <button type="submit" class="btn btn-primary">Aplicar</button>
-                        </div>
-                    </div>
-
-
-
-
-
-    
-
-
-                    </form>
-
-
-
+                
                 </div>
                 <div class="col-4"></div>
 
             </div>
-
-
-
-
-            
+   
 
         </div>
 
