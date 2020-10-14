@@ -1,0 +1,58 @@
+#caja{
+
+    text-align: center;
+
+    
+}
+
+
+
+
+#card{
+
+    display: inline-flex;
+
+}
+
+
+#conteinerIngresar{
+
+    padding-top: 1rem;
+
+}
+#filtro{
+
+    
+    height: 30rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: red;
+    border-style:  inset;
+    border-color: black;
+
+    display: inline-flex;
+    
+   
+
+}
+
+#card-pelicula{
+
+
+    
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    
+    border-style:  inset;
+    border-color: black;
+
+    border-radius: 1rem;
+    
+}
+
+.card-img-top{
+
+    width: 90%;
+    height: 20rem;
+
+}
