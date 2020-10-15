@@ -6,7 +6,7 @@
 <?php
 
 
-    if($_POST)    
+    if(isset($_POST["genero"]))    
     {
 
         $genero_filtro=$_POST["genero"];
@@ -14,7 +14,7 @@
         $fecha_action=$_POST["fecha_action"];
 
 
-        var_dump($_POST);
+        
     }        
     else
     {
@@ -167,7 +167,7 @@
 
                         
                     }
-                    
+
                     if($fecha_action=="on")
                         { 
                             
@@ -185,6 +185,10 @@
                             
                             
                         }
+<<<<<<< HEAD
+=======
+                   
+>>>>>>> f02d442ffce1221791d4b3b9641d7f89a0aa4cfe
                          
                     
 
@@ -233,9 +237,13 @@
 
                        
                            
+<<<<<<< HEAD
 
                         }
 
+=======
+                        }
+>>>>>>> f02d442ffce1221791d4b3b9641d7f89a0aa4cfe
                             ?>
 
                    
