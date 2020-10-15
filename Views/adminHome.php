@@ -185,12 +185,6 @@
                             
                             
                         }
-<<<<<<< HEAD
-=======
-                   
->>>>>>> f02d442ffce1221791d4b3b9641d7f89a0aa4cfe
-                         
-                    
 
                         foreach ($peliculas_filtradas as $pelicula ) {
                            
@@ -237,13 +231,9 @@
 
                        
                            
-<<<<<<< HEAD
 
                         }
 
-=======
-                        }
->>>>>>> f02d442ffce1221791d4b3b9641d7f89a0aa4cfe
                             ?>
 
                    
@@ -260,17 +250,6 @@
                     
 
                     
-
-                    
-
-
-
-
-
-
-
-
-
 
 
 

@@ -12,5 +12,12 @@
         "salas": "2",
         "direccion": "Calle Falsa 123",
         "precio": "600"
+    },
+    {
+        "idCine": "3",
+        "nombreCine": "Cine de Nico",
+        "salas": "4",
+        "direccion": "Calle falsa 125",
+        "precio": "500"
     }
 ]
