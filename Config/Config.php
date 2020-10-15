@@ -1,10 +1,8 @@
-<?php 
-
-namespace Config;
+<?php namespace Config;
 
 define("ROOT", dirname(__DIR__) . "/");
 //Path to your project's root folder
-define("FRONT_ROOT", "/MoviePass/");
+define("FRONT_ROOT", "/moviePass/");
 
 
 define("VIEWS_PATH", "Views/");

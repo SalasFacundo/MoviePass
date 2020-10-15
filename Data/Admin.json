@@ -1,16 +1,15 @@
 [
     {
-        "userName": "nico",
-        "password": "123"
-    }
-    ,
+        "name": "Facu",
+
+        "password": "2222"
+    },
     {
-        "userName": "facu",
-        "password": "123"
-    }
-    ,
+        "name": "Nico",
+        "password": "3333"
+    },
     {
-        "userName": "diego",
-        "password": "123"
+        "name": "Diego",
+        "password": "1111"
     }
 ]
