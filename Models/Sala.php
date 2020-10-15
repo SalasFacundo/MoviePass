@@ -9,16 +9,25 @@ namespace Models;
  {
  	
  	private $numero_sala;
- 	private $capacidad;
-    private $peliculas;
+    private $capacidad;
+    private $idCine; 
+    private $peliculas = array();
  	
  	function __construct()
  	{
  	
  	}
 
+     public function getIdCine()
+    {
+        return $this->idCine;
+    }
 
-
+    
+    public function setIdCine($idCine)
+    {
+        $this->idCine = $idCine;
+    }
    
     public function getNumeroSala()
     {
