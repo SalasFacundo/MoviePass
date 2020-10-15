@@ -6,7 +6,9 @@
     use DAO\CineDao as CineDao;
     use Models\Sala as Sala;
 
-    class SalaController{
+    class SalaController
+    {
+
         private $salaDao;
 
         public function __construct(){

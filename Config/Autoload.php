@@ -1,4 +1,7 @@
-<?php namespace Config;
+
+<?php
+
+namespace Config;
 	
     class Autoload {
         
@@ -10,5 +13,6 @@
 				include_once($classPath);
 			});
         }
+             
     }
 ?>

@@ -1,54 +1,93 @@
-<?php 
-
- include('nav-bar.php');
-
-?>
-
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-     
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   
+
+    <link href="<?php echo CSS_PATH;?>estilos.css" rel="stylesheet" type="text/css" media="all">
+
+    <link href="<?php echo CSS_PATH;?>bootstrap.min.css" rel="stylesheet" media="screen">
+
+
 </head>
-            <h2>Agregar Admin</h2>
+<body>
+    
+    
 
-                <form action="<?= FRONT_ROOT ?>/Admin/Add" method="post" >
-                <?php 
-                if($mensaje){
-                    echo '<p>'.$mensaje.'</p>';
-                }
-                ?>
-                <p>
-                    <label for="nombre">Nombre: </label>
-                    <input type="text" name="id">
-                </p>
-                <p>
-                    <label for="user">User Name</label>
-                    <input type="text" name="user" min=0 max=5>
-                </p>
-                <p>
-                    <label for="password">Contraseña:</label>
-                    <input type="text" name="password" >
-                </p>
-                <button type="submit">Agregar</button>
-                
-                </form>
-                <br>
-            <h2>Borrar Admin</h2>
-            <form action="<?= FRONT_ROOT ?>/Admin/removeAdmin" method="post" >
+     <header> </header>
 
-            <?php 
-                if($mensaje){
-                    echo '<p>'.$mensaje.'</p>';
-                }
-            ?>
-                
-                <p>
-                    <label for="user">User Name</label>
-                    <input type="text" name="user" min=0 max=5>
-                </p>
+     
+    
+     <section>
+
+
+     <div class="container-fluid" id="formulario-index">
+
+    
+        <div class="row">
+
+        <div class="col-4"></div>
+
+        <div  id="noUser" class="col-4">
+        
+        <!-- <?= FRONT_ROOT ?>/LoginAdmin/Login -->
+
+
+
+        <form action="<?= FRONT_ROOT ?>/Login/Login" method="post" >
+                        <div class="form-group">
+                            <label >Usuario</label>
+                            <input type="text" class="form-control" name="adminName"  >
+                        
+                        </div>
+                        <div class="form-group">
+                            <label >Password</label>
+                            <input type="text" class="form-control" name="pass" >
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+        <br>
+        <br>
+        <br>
+        <a  href="">No tienes usuario</a>
+
+       
+    
+
+    
+    
+    
+    
+        </div>
+
+        <div class="col-4"></div>
+
+        </div>
+
+
+        <div class="row">
+
+        <div class="col-2"></div>
+
+        <div class="col-8"> </div>
+
+        <div class="col-2">
+
+            <a href="<?= FRONT_ROOT ?>/Home/AdminHome" class="btn btn-success" role="button" aria-pressed="true">IR AL ADMINHOME</a>
+        
+        
+            </div>
+
+        </div>
+
+
+
+    </div>
 
                 <button type="submit">Borrar</button>
                 
@@ -83,77 +122,61 @@
                     <input type="number" name="user" min=0>
                 </p>
 
-                <button type="submit">Borrar</button>
-                
-            </form>
-            <h2>Agregar sala a un cine</h2>
-            <form action="<?= FRONT_ROOT ?>/Sala/Add" method="post" >
-                <?php 
-                if($mensaje){
-                    echo '<p>'.$mensaje.'</p>';
-                }
-                ?>
-                <p>
-                    <label for="user">Elija el cine:</label>
-                    <select name="cineId" id="cine">
-                        <option value="1">Cinema1</option>
-                        <option value="2">Cinema2</option>
-                        <option value="3">Otro cine mas grande</option>
-                    </select>
-                </p>
-                <p>
-                    <h4>Descripcion de la sala: </h4>
-                    <label for="numeroSala">Numero de Sala:</label>
-                    <input type="number" name="numeroSala" min=0>
-                    <br>
-                    <label for="capacidad">Capacidad:</label>
-                    <input type="number" name="capacidad" min=0>
 
-                </p>
 
-                <button type="submit">Agregar Sala</button>
-                
-            </form>
-            <h2>Eliminar una sala de un cine</h2>
-            <form action="<?= FRONT_ROOT ?>/Sala/Remove" method="post" >
-                <?php 
-                if($mensaje){
-                    echo '<p>'.$mensaje.'</p>';
-                }
-                ?>
-                <p>
-                    <label for="user">Elija el cine:</label>
-                    <select name="cineId" id="cine">
-                        <option value="1">Cinema1</option>
-                        <option value="2">Cinema2</option>
-                        <option value="3">Otro cine mas grande</option>
-                    </select>
-                </p>
-                 <p>
-                    <label for="numeroSala">Numero de Sala:</label>
-                    <input type="number" name="numeroSala" min=0>
-                    <br>
+     </section>
 
                 </p>
                 
                
 
-                <button type="submit">Eliminar Sala</button>
-                
-            </form>
 
-
-        
-    
-
-    <footer></footer>
+     <footer></footer>
 
 
 
 
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="<?php echo JS_PATH;?>bootstrap.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
 </body>
-
-
-
 </html>
