@@ -5,8 +5,9 @@
 
 <?php
 
-    if($_POST)    
+    if(isset($_POST))    
     {
+        
         $genero_filtro=$_POST["genero"];
         $fecha_filtro=$_POST["fecha"];
         $fecha_action=$_POST["fecha_action"];
