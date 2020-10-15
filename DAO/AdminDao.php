@@ -64,50 +64,69 @@
 
     private function saveData()
     {
+        $arrayToDecode = array();
 
-        $arrayToDecode= array();
+        foreach($this->userList as $user)
+        {
+            $valuesArray["name"]= $user->getName();
+            $valuesArray["user"]= $user->getUser();
+            $valuesArray["password"]= $user->getPassword();
+            
+            array_push($arrayToDecode,$valuesArray);
 
-                    $admins = array_values($admins); //Reordering array indexes
+        }
 
-                    return (count($admins) > 0) ? $admins[0] : null;
-                }
+        $jsonContet = json_encode($arrayToDecode,JSON_PRETTY_PRINT);
+
+        file_put_contents($this->fileName,$jsonContet);
 
 
+    }
 
+    public function GetByAdminName($adminName)
+    {
+        $admin = null;
 
-                private function RetrieveData()
-                {
-                    $this->adminList = array();
+        $this->RetrieveData();
+
+        $admins = array_filter($this->adminList, function($admin) use($adminName){
+            return $admin->getAdminName() == $adminName;
+        });
+
+        $admins = array_values($admins); //Reordering array indexes
+
+        return (count($admins) > 0) ? $admins[0] : null;
+    
+    }
+
 
     private function retrieveData()
     {
         $this->userList = array();
 
-                        $contentArray = ($jsonToDecode) ? json_decode($jsonToDecode, true) : array();
-                        
-                        foreach($contentArray as $content)
-                        {
-                            $admin = new Admin();
-                            $admin->setAdminName($content["userName"]);
-                            $admin->setPassword($content["password"]);
 
-                            array_push($this->adminList, $admin);
-                        }
-                    }
-                }  
+        if(file_exists($this->fileName))
+        {
+            $jsonToDecode = file_get_contents($this->fileName);
 
-
+            $contentArray = ($jsonToDecode) ? json_decode($jsonToDecode, true) : array();
             
+            foreach($contentArray as $content)
+            {
+                $admin = new Admin();
+                $admin->setAdminName($content["userName"]);
+                $admin->setPassword($content["password"]);
 
-
-
+                array_push($this->adminList, $admin);
+            }
         }
+    }  
+
+}
 
 
 
 
-
-       
 
 
 
