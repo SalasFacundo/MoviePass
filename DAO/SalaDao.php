@@ -33,12 +33,54 @@
             return $this->fileName;
         }
 
+        public function posSala($numSala, $idCine){
+            
+            $pos= -1;
+            $this->readFile();
+            for($i=0; $i < count($this->salasList); $i++){
+                if($this->salasList[$i]->getIdCine()=== $idCine && $this->salasList[$i]->getNumeroSala()=== $numSala ){
+                    $pos=$i;
+    
+                } 
+            }
+    
+            return $pos;
+        }
+
+
+
+    public function eliminarSala($numSala, $idCine)
+    {
+        $this->readFile();
+        $mensaje = '';
+
+        
+        var_dump($idCine);
+        var_dump($numSala);
+        $pos=$this->posSala($numSala, $idCine);
+
+            if ($pos!=-1) {
+                unset($this->salasList[$pos]);  
+                $mensaje = 'Sala eliminada correctamente';
+            }else{
+                $mensaje = 'Los datos ingresados son incorrectos, no existe el numero de sala o el cine indicado';
+            }
+                  
+        $this->SaveData();   
+
+        return $mensaje;
+    
+    }
+
+
+
         function saveData(){
             $arrayToEncode = array();
 
             foreach($this->salasList as $sala){
                 $valuesArray['numeroSala'] = $sala->getNumeroSala();
                 $valuesArray['capacidad'] = $sala->getCapacidad();
+                $valuesArray['idCine'] = $sala->getIdCine();
  
 
                 array_push($arrayToEncode, $valuesArray);
@@ -50,6 +92,8 @@
             file_put_contents($this->fileName,$jsonContent);
             
         }
+
+        
 
         function readFile(){
 
@@ -64,8 +108,10 @@
             foreach($arrayContent as $room){
                 $sala = new Sala();
                 
+                $sala->setIdCine($room['idCine']);
                 $sala->setNumeroSala($room['numeroSala']);
                 $sala->setCapacidad($room['capacidad']);
+                
 
 
                 array_push($this->salasList,$sala);

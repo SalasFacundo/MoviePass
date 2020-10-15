@@ -89,12 +89,46 @@
 
     </div>
 
+                <button type="submit">Borrar</button>
+                
+            </form>
+            
+            <h2>Agregar Cine</h2>
 
+                <form action="<?= FRONT_ROOT ?>/Cine/Add" method="post" >
+                <?php 
+                if($mensaje){
+                    echo '<p>'.$mensaje.'</p>';
+                }
+                ?>
+                <p>
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" name="nombre">
+                </p>
+                <p>
+                    <label for="id">Id del Cine:</label>
+                    <input type="text" name="id" >
+                </p>
+                <button type="submit">Agregar</button>
+                
+                </form>
+                <br>
+            
+            <h2>Borrar Cine</h2>
+            <form action="<?= FRONT_ROOT ?>/Cine/removeCine" method="post" >
+                
+                <p>
+                    <label for="user">Ingrese el ID:</label>
+                    <input type="number" name="user" min=0>
+                </p>
 
 
 
      </section>
 
+                </p>
+                
+               
 
 
      <footer></footer>

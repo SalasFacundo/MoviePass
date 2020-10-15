@@ -1,12 +1,12 @@
 [
     {
         "idCine": "1",
-        "nombreCine": "El de cordoba",
-        "salas": "6"
+        "nombreCine": "Cine Loco",
+        "salas": "4"
     },
     {
-        "idCine": "2223",
-        "nombreCine": "Otro Cine",
-        "salas": "3"
+        "idCine": "2",
+        "nombreCine": "Cinema2",
+        "salas": "5"
     }
 ]
