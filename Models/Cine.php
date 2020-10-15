@@ -13,9 +13,6 @@ namespace Models;
  		
  	}
 
-    
-
-
     public function getIdCine()
     {
         return $this->id_cine;
@@ -49,10 +46,9 @@ namespace Models;
 
     
     public function setSalas($salas)
-    {
+    {  
         $this->salas = $salas;
     }
-
 
 } 
 

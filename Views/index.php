@@ -12,22 +12,14 @@
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      
 </head>
-    
-<div class="container-fluid">
+            <h2>Agregar Admin</h2>
 
-    
-    <section>
-
-    <div class="row" id="caja1">
-        
-        <div class="col-2"><h2>columna 1</h2></div>
-
-        <div class="col-8"> <h2>columna 2</h2></div>
-
-        <div class="col-2"><h2>columna 3</h2></div>
-
-        <div id="caja2">
                 <form action="<?= FRONT_ROOT ?>/Admin/Add" method="post" >
+                <?php 
+                if($mensaje){
+                    echo '<p>'.$mensaje.'</p>';
+                }
+                ?>
                 <p>
                     <label for="nombre">Nombre: </label>
                     <input type="text" name="id">
@@ -42,10 +34,16 @@
                 </p>
                 <button type="submit">Agregar</button>
                 
-            </form>
-            <br>
+                </form>
+                <br>
             <h2>Borrar Admin</h2>
             <form action="<?= FRONT_ROOT ?>/Admin/removeAdmin" method="post" >
+
+            <?php 
+                if($mensaje){
+                    echo '<p>'.$mensaje.'</p>';
+                }
+            ?>
                 
                 <p>
                     <label for="user">User Name</label>
@@ -55,6 +53,28 @@
                 <button type="submit">Borrar</button>
                 
             </form>
+            
+            <h2>Agregar Cine</h2>
+
+                <form action="<?= FRONT_ROOT ?>/Cine/Add" method="post" >
+                <?php 
+                if($mensaje){
+                    echo '<p>'.$mensaje.'</p>';
+                }
+                ?>
+                <p>
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" name="nombre">
+                </p>
+                <p>
+                    <label for="id">Id del Cine:</label>
+                    <input type="text" name="id" >
+                </p>
+                <button type="submit">Agregar</button>
+                
+                </form>
+                <br>
+            
             <h2>Borrar Cine</h2>
             <form action="<?= FRONT_ROOT ?>/Cine/removeCine" method="post" >
                 
@@ -66,38 +86,67 @@
                 <button type="submit">Borrar</button>
                 
             </form>
-            
-        </div>
+            <h2>Agregar sala a un cine</h2>
+            <form action="<?= FRONT_ROOT ?>/Sala/Add" method="post" >
+                <?php 
+                if($mensaje){
+                    echo '<p>'.$mensaje.'</p>';
+                }
+                ?>
+                <p>
+                    <label for="user">Elija el cine:</label>
+                    <select name="cineId" id="cine">
+                        <option value="1">Cinema1</option>
+                        <option value="2">Cinema2</option>
+                        <option value="3">Otro cine mas grande</option>
+                    </select>
+                </p>
+                <p>
+                    <h4>Descripcion de la sala: </h4>
+                    <label for="numeroSala">Numero de Sala:</label>
+                    <input type="number" name="numeroSala" min=0>
+                    <br>
+                    <label for="capacidad">Capacidad:</label>
+                    <input type="number" name="capacidad" min=0>
+
+                </p>
+
+                <button type="submit">Agregar Sala</button>
+                
+            </form>
+            <h2>Eliminar una sala de un cine</h2>
+            <form action="<?= FRONT_ROOT ?>/Sala/Remove" method="post" >
+                <?php 
+                if($mensaje){
+                    echo '<p>'.$mensaje.'</p>';
+                }
+                ?>
+                <p>
+                    <label for="user">Elija el cine:</label>
+                    <select name="cineId" id="cine">
+                        <option value="1">Cinema1</option>
+                        <option value="2">Cinema2</option>
+                        <option value="3">Otro cine mas grande</option>
+                    </select>
+                </p>
+                 <p>
+                    <label for="numeroSala">Numero de Sala:</label>
+                    <input type="number" name="numeroSala" min=0>
+                    <br>
+
+                </p>
+                
+               
+
+                <button type="submit">Eliminar Sala</button>
+                
+            </form>
+
+
         
-        
-    </div>
-
-
-
-    <div class="row"id="caja2">
-        
-        <div class="col-3"><h2>columna 1</h2></div>
-
-        <div class="col-6"> <h2>columna 2</h2></div>
-
-        <div class="col-3"><h2>columna 3</h2></div>
-        
-    </div>
-        
-
-
-    </section>
-    
-
-
     
 
     <footer></footer>
-
-
-
-
- </div>
 
 
 
