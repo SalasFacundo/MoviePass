@@ -6,7 +6,7 @@ namespace Models;
  {
  	private $id_cine;
  	private $nombre_cine;
- 	private $salas = array();
+ 	private $salas;
 
  	function __construct()
  	{
@@ -46,15 +46,8 @@ namespace Models;
 
     
     public function setSalas($salas)
-    {
+    {  
         $this->salas = $salas;
-    }
-
-    public function addSala($sala){
-        
-        array_push($this->salas,$sala);
-
-
     }
 
 } 

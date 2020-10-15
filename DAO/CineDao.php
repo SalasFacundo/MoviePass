@@ -42,9 +42,10 @@
 
 
         public function posCine($id){
-        
-            $pos=-1;
-    
+            
+            $pos= -1;
+            $this->readFile();
+            var_dump($this->cinemaList);
             for($i=0; $i < count($this->cinemaList); $i++){
                 if($this->cinemaList[$i]->getIdCine()===$id){
                     $pos=$i;
@@ -60,15 +61,19 @@
     public function eliminarCine($id)
     {
         $this->readFile();
-
+        $mensaje = '';
         $pos=$this->posCine($id);
 
             if ($pos!=-1) {
                 unset($this->cinemaList[$pos]);  
+                $mensaje = 'Cine eliminado correctamente';
+            }else{
+                $mensaje = 'No se encontro el id del cine indicado';
             }
                   
         $this->SaveData();   
-
+        
+        return $mensaje;
     
     }
 
@@ -80,10 +85,10 @@
         
         if($pos != -1){
             // Falta checkear que el numero de sala no se repita
-            $this->cinemaList[$pos]->addSala($sala);
+            $salasDelCine = $this->cinemaList[$pos]->getSalas();
+            array_push($salasDelCine, $sala);
 
-  
-            //var_dump($this->cinemaList[$pos]->getSalas());
+            $this->cinemaList[$pos]->setSalas($salasDelCine);
            
             $this->saveData();
 
@@ -101,7 +106,6 @@
                 $valuesArray['idCine'] = $cine->getIdCine();
                 $valuesArray['nombreCine'] = $cine->getNombreCine();
                 $valuesArray['salas'] = $cine->getSalas();
-
                 array_push($arrayToEncode, $valuesArray);
 
             }
@@ -113,6 +117,8 @@
             
             
         }
+
+
 
         function readFile(){
 
@@ -141,5 +147,5 @@
         }
 
     }
-
+    
 ?>

@@ -54,15 +54,19 @@ class AdminDAO {
     public function eliminarAdmin($id)
     {
         $this->RetrieveData();
-
+        $mensaje = '';
         $pos=$this->posAdmin($id);
 
             if ($pos!=-1) {
-                unset($this->userList[$pos]);  
+                unset($this->userList[$pos]);
+                $mensaje = 'Administrador eliminado correctamente';  
+            }else{
+                $mensaje = "No se encontro el administrador indicado";
             }
                   
         $this->SaveData();   
-
+        
+        return $mensaje;
     }
 
     private function saveData()

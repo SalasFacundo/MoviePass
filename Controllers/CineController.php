@@ -12,66 +12,47 @@
         public function __construct(){
             $this->cineDao = new CineDao();
         }
-        public function showAddView(){
+        public function showAddView($mensaje){
             require_once(VIEWS_PATH."index.php");
         }
 
         public function Add($nombre, $id){
-        
-            $cineNuevo = new Cine();
-
             
-            $cineNuevo->setNombreCine($nombre);
-            $cineNuevo->setIdCine($id);
+            $cineNuevo = new Cine();
+            $mensaje = '';
+            $todosLosCines = $this->cineDao->getAll();
 
+            $repite = false;
 
-            $this->cineDao->add($cineNuevo);
+            foreach($todosLosCines as $cine){
+                if($cine->getIdCine() == $id){
+                    $repite = true;
+                }
+            }
+            
+            if(!$repite){
+                $cineNuevo->setNombreCine($nombre);
+                $cineNuevo->setIdCine($id);
+
+                $this->cineDao->add($cineNuevo);
+                $mensaje = 'Cine agregado correctamente!';
+            }else{
+                $mensaje = 'Ya existe un cine con ese numero de ID';
+            }
+            
 
             //var_dump($cineNuevo);
             
-            $this->showAddView();
+            $this->showAddView($mensaje);
         }
 
         public function removeCine ($id){
 
-            $this->cineDao->eliminarCine($id);
-             
-            $this->showAddView();
-            
-
-        }
-
-        public function addSalaToCine($cineId, $numeroDeSala, $capacidad){
-
-            $sala = new Sala();
-
-            $sala->setNumeroSala($numeroDeSala);
-            $sala->setCapacidad($capacidad);
-
-            
-            $this->cineDao->agregarSalaAlCine($sala, $cineId);
-
-            $this->showAddView();
-
-        }
-
-
-
-        function showSalasFromCineId ($id){
-
             $todosLosCines = $this->cineDao->getAll();
-
-            foreach($todosLosCines as $cine)
-            {
-                if($cine->getIdCine() === $id){
-                    $salas = $cine->getSalas();
-                    foreach($salas as $sala){
-                        var_dump($sala);
-                    }
-                }
-            }
-
-            $this->showAddView();
+            $mensaje = $this->cineDao->eliminarCine($id);
+             
+            $this->showAddView($mensaje);
+            
 
         }
 

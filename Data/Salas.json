@@ -1,26 +1,32 @@
 [
     {
-        "numeroSala": "4",
-        "capacidad": "250"
+        "numeroSala": "1",
+        "capacidad": "121",
+        "idCine": "1"
     },
     {
         "numeroSala": "2",
-        "capacidad": "120"
+        "capacidad": "222",
+        "idCine": "1"
     },
     {
-        "numeroSala": "4",
-        "capacidad": "200"
+        "numeroSala": "3",
+        "capacidad": "333",
+        "idCine": "1"
     },
     {
-        "numeroSala": "9",
-        "capacidad": "1000"
+        "numeroSala": "2",
+        "capacidad": "120",
+        "idCine": "2"
     },
     {
-        "numeroSala": "9",
-        "capacidad": "1000"
+        "numeroSala": "1",
+        "capacidad": "250",
+        "idCine": "2"
     },
     {
-        "numeroSala": "9",
-        "capacidad": "1000"
+        "numeroSala": "3",
+        "capacidad": "180",
+        "idCine": "2"
     }
 ]

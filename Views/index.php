@@ -13,7 +13,13 @@
      
 </head>
             <h2>Agregar Admin</h2>
+
                 <form action="<?= FRONT_ROOT ?>/Admin/Add" method="post" >
+                <?php 
+                if($mensaje){
+                    echo '<p>'.$mensaje.'</p>';
+                }
+                ?>
                 <p>
                     <label for="nombre">Nombre: </label>
                     <input type="text" name="id">
@@ -32,6 +38,12 @@
                 <br>
             <h2>Borrar Admin</h2>
             <form action="<?= FRONT_ROOT ?>/Admin/removeAdmin" method="post" >
+
+            <?php 
+                if($mensaje){
+                    echo '<p>'.$mensaje.'</p>';
+                }
+            ?>
                 
                 <p>
                     <label for="user">User Name</label>
@@ -43,7 +55,13 @@
             </form>
             
             <h2>Agregar Cine</h2>
+
                 <form action="<?= FRONT_ROOT ?>/Cine/Add" method="post" >
+                <?php 
+                if($mensaje){
+                    echo '<p>'.$mensaje.'</p>';
+                }
+                ?>
                 <p>
                     <label for="nombre">Nombre: </label>
                     <input type="text" name="nombre">
@@ -69,8 +87,12 @@
                 
             </form>
             <h2>Agregar sala a un cine</h2>
-            <form action="<?= FRONT_ROOT ?>/Cine/addSalaToCine" method="post" >
-
+            <form action="<?= FRONT_ROOT ?>/Sala/Add" method="post" >
+                <?php 
+                if($mensaje){
+                    echo '<p>'.$mensaje.'</p>';
+                }
+                ?>
                 <p>
                     <label for="user">Elija el cine:</label>
                     <select name="cineId" id="cine">
@@ -92,14 +114,34 @@
                 <button type="submit">Agregar Sala</button>
                 
             </form>
+            <h2>Eliminar una sala de un cine</h2>
+            <form action="<?= FRONT_ROOT ?>/Sala/Remove" method="post" >
+                <?php 
+                if($mensaje){
+                    echo '<p>'.$mensaje.'</p>';
+                }
+                ?>
+                <p>
+                    <label for="user">Elija el cine:</label>
+                    <select name="cineId" id="cine">
+                        <option value="1">Cinema1</option>
+                        <option value="2">Cinema2</option>
+                        <option value="3">Otro cine mas grande</option>
+                    </select>
+                </p>
+                 <p>
+                    <label for="numeroSala">Numero de Sala:</label>
+                    <input type="number" name="numeroSala" min=0>
+                    <br>
 
-            <h2>VER SALAS DE UN CINE</h2>
-            <form action="<?= FRONT_ROOT ?>/Cine/showSalasFromCineId" method="post">
-                <label for="idCine">Cine: </label>
-                <input type="number" name="idCine">
-                <button>Mostrar Salas</button>
-                <br>
+                </p>
+                
+               
+
+                <button type="submit">Eliminar Sala</button>
+                
             </form>
+
 
         
     
