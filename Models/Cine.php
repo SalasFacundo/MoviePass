@@ -5,13 +5,37 @@ namespace Models;
  class Cine 
  {
  	private $id_cine;
- 	private $nombre_cine;
+    private $nombre_cine;
+    private $precioEntrada;
+    private $direccion;
  	private $salas;
 
  	function __construct()
  	{
  		
- 	}
+    }
+     
+     public function getPrecio()
+     {
+         return $this->precioEntrada;
+     }
+ 
+     
+     public function setPrecio($precio)
+     {
+         $this->precioEntrada = $precio;
+     }
+
+     public function getDireccion()
+     {
+         return $this->direccion;
+     }
+ 
+     
+     public function setDireccion($direccion)
+     {
+         $this->direccion = $direccion;
+     }
 
     public function getIdCine()
     {

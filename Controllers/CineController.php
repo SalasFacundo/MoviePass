@@ -16,7 +16,7 @@
             require_once(VIEWS_PATH."index.php");
         }
 
-        public function Add($nombre, $id){
+        public function Add($nombre, $id, $direccion, $precio, $salas ){
             
             $cineNuevo = new Cine();
             $mensaje = '';
@@ -33,6 +33,9 @@
             if(!$repite){
                 $cineNuevo->setNombreCine($nombre);
                 $cineNuevo->setIdCine($id);
+                $cineNuevo->setDireccion($direccion);
+                $cineNuevo->setPrecio($precio);
+                $cineNuevo->setSalas($salas);
 
                 $this->cineDao->add($cineNuevo);
                 $mensaje = 'Cine agregado correctamente!';

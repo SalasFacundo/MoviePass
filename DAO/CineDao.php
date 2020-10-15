@@ -106,6 +106,8 @@
                 $valuesArray['idCine'] = $cine->getIdCine();
                 $valuesArray['nombreCine'] = $cine->getNombreCine();
                 $valuesArray['salas'] = $cine->getSalas();
+                $valuesArray['direccion'] = $cine->getDireccion();
+                $valuesArray['precio'] = $cine->getPrecio();
                 array_push($arrayToEncode, $valuesArray);
 
             }
@@ -136,6 +138,8 @@
                 $cine->setIdCine($cinema['idCine']);
                 $cine->setNombreCine($cinema['nombreCine']);
                 $cine->setSalas($cinema['salas']);
+                $cine->setPrecio($cinema['precio']);
+                $cine->setDireccion($cinema['direccion']);
 
                 array_push($this->cinemaList,$cine);
             }

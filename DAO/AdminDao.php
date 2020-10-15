@@ -76,8 +76,7 @@ class AdminDAO {
 
         foreach($this->userList as $user)
         {
-            $valuesArray["name"]= $user->getName();
-            $valuesArray["user"]= $user->getUser();
+            $valuesArray["name"]= $user->getAdminName();
             $valuesArray["password"]= $user->getPassword();
             
             array_push($arrayToDecode,$valuesArray);
@@ -97,7 +96,7 @@ class AdminDAO {
 
         $this->RetrieveData();
 
-        $admins = array_filter($this->adminList, function($admin) use($adminName){
+        $admins = array_filter($this->userList, function($admin) use($adminName){
             return $admin->getAdminName() == $adminName;
         });
 
@@ -123,8 +122,7 @@ class AdminDAO {
             {
                 $user = new Admin();
 
-                $user->setName($valuesArray["name"]);
-                $user->setUser($valuesArray["user"]);
+                $user->setAdminName($valuesArray["name"]);
                 $user->setPassword($valuesArray["password"]);
 
                 array_push($this->userList,$user);
