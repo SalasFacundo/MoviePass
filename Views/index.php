@@ -37,7 +37,7 @@
 
 
 
-        <form action="<?= FRONT_ROOT ?>/Login/Login" method="post" >
+        <form action="<?= FRONT_ROOT ?>Login/Login" method="post" >
                         <div class="form-group">
                             <label >Usuario</label>
                             <input type="text" class="form-control" name="adminName"  >

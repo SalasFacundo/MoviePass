@@ -45,7 +45,7 @@
             
             $pos= -1;
             $this->readFile();
-            var_dump($this->cinemaList);
+            
             for($i=0; $i < count($this->cinemaList); $i++){
                 if($this->cinemaList[$i]->getIdCine()===$id){
                     $pos=$i;
@@ -61,19 +61,15 @@
     public function eliminarCine($id)
     {
         $this->readFile();
-        $mensaje = '';
         $pos=$this->posCine($id);
 
             if ($pos!=-1) {
                 unset($this->cinemaList[$pos]);  
-                $mensaje = 'Cine eliminado correctamente';
-            }else{
-                $mensaje = 'No se encontro el id del cine indicado';
+    
             }
                   
         $this->SaveData();   
-        
-        return $mensaje;
+    
     
     }
 
@@ -95,6 +91,39 @@
 
         }
 
+
+    }
+
+    public function EditarCine ($nombre, $id, $direccion, $precio, $salas){
+
+        $pos = $this->posCine($id);
+        $mensaje = 'No se encontro el id del cine buscado';
+        if($pos != -1){
+            if($nombre != ''){
+                $this->cinemaList[$pos]->setNombreCine($nombre);
+            }
+            
+            if($direccion != ''){
+                $this->cinemaList[$pos]->setDireccion($direccion);
+            }
+
+            if($precio != ''){
+                $this->cinemaList[$pos]->setPrecio($precio);
+            }
+
+            if($salas != ''){
+                $this->cinemaList[$pos]->setSalas($salas);
+            }
+
+            
+            
+
+            $mensaje = 'Cine editado correctamente';
+
+            $this->saveData();
+        } 
+
+        return $mensaje;
 
     }
 
