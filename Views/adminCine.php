@@ -130,13 +130,13 @@
 
             <div class="col-sm-4"></div>
             <div class="col-sm-4" style="text-align: center;">
-                <h3>fromulario</h3>
-            </div>
-            <form action="<?= FRONT_ROOT ?>Cine/EditCine" method="post">
+                
+
+                <form action="<?= FRONT_ROOT ?>Cine/EditCine" method="post">
                 <div class="form-group">
                     <label for="" class="col-sm-4 col-form-label">Cine:</label>
                     <div class="col-sm-10">
-                        <select name="id" id="">
+                        <select name="id" id="" class="form-control">
                             <option value="">--Selecciona un Cine--</option>
 
                             <?php 
@@ -190,6 +190,8 @@
                     </div>
 
             </form>
+            </div>
+            
         </div>
 
 
@@ -299,7 +301,6 @@
 
 
         </div>
-
 
 
 
