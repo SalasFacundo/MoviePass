@@ -6,7 +6,7 @@
 <?php
 
 
-    if($_POST)    
+    if(isset($_POST["genero"]))    
     {
 
         $genero_filtro=$_POST["genero"];
@@ -14,7 +14,7 @@
         $fecha_action=$_POST["fecha_action"];
 
 
-        var_dump($_POST);
+        
     }        
     else
     {
@@ -137,11 +137,7 @@
                         $peliculas=array_merge($peliculas, $peliculas2);
                     }
                     
-<<<<<<< HEAD
-                    
-=======
                     var_dump($peliculas[0]);
->>>>>>> SalasFacundo
                     
                     $id_genero_form=null;
                     
@@ -169,14 +165,10 @@
                             } 
                         }  
 
-<<<<<<< HEAD
-                        if($fecha_action=="on")
-=======
                         
                     }
-                    
+
                     if($fecha_action=="on")
->>>>>>> SalasFacundo
                         { 
                             
                             $peliculas_para_filtrar=$peliculas_filtradas;
@@ -193,11 +185,7 @@
                             
                             
                         }
-<<<<<<< HEAD
-                    }
                    
-=======
->>>>>>> SalasFacundo
                          
                     
 
@@ -246,13 +234,7 @@
 
                        
                            
-<<<<<<< HEAD
                         }
-=======
-
-                        }
-
->>>>>>> SalasFacundo
                             ?>
 
                    

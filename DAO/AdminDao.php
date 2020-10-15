@@ -30,7 +30,7 @@ class AdminDAO {
     {
         $this->retrieveData();
 
-        var_dump($this->userList);
+        //var_dump($this->userList);
 
         return $this->userList;
         
@@ -116,7 +116,7 @@ class AdminDAO {
 
             $arrayToDecode = ($jsonContet ) ? json_decode ($jsonContet,true):array();
 
-            var_dump($arrayToDecode);
+            //var_dump($arrayToDecode);
 
             foreach($arrayToDecode as $valuesArray)
             {
