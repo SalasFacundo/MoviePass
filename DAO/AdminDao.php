@@ -1,24 +1,27 @@
 <?php        
 
 
-    namespace DAO;
+namespace DAO;
 
-    use Models\Admin as Admin;
+use Models\Admin as Admin;
 
-    use DAO\IAdminDao as IAdminDao;
+class AdminDAO {
+
+    private $userList = array();
+    private $fileName;
 
 
+    public function __construct()
+    {
+            $this->fileName = dirname(__DIR__)."/Data/Admin.json";
+     }
 
-
-        class AdminDao implements IAdminDao
-        {
 
     public function Add($user)
     {
         $this->retrieveData();
 
-            private $adminList = array();
-            private $fileName ;
+        array_push($this->userList,$user);
 
         $this->saveData();
     }
@@ -27,7 +30,11 @@
     {
         $this->retrieveData();
 
+        //var_dump($this->userList);
 
+        return $this->userList;
+        
+    }
 
     public function posAdmin($user){
         
@@ -64,12 +71,12 @@
 
     private function saveData()
     {
-        $arrayToDecode = array();
+
+        $arrayToDecode= array();
 
         foreach($this->userList as $user)
         {
-            $valuesArray["name"]= $user->getName();
-            $valuesArray["user"]= $user->getUser();
+            $valuesArray["name"]= $user->getAdminName();
             $valuesArray["password"]= $user->getPassword();
             
             array_push($arrayToDecode,$valuesArray);
@@ -80,8 +87,8 @@
 
         file_put_contents($this->fileName,$jsonContet);
 
-
     }
+
 
     public function GetByAdminName($adminName)
     {
@@ -89,14 +96,13 @@
 
         $this->RetrieveData();
 
-        $admins = array_filter($this->adminList, function($admin) use($adminName){
+        $admins = array_filter($this->userList, function($admin) use($adminName){
             return $admin->getAdminName() == $adminName;
         });
 
         $admins = array_values($admins); //Reordering array indexes
 
         return (count($admins) > 0) ? $admins[0] : null;
-    
     }
 
 
@@ -104,26 +110,38 @@
     {
         $this->userList = array();
 
-
         if(file_exists($this->fileName))
         {
-            $jsonToDecode = file_get_contents($this->fileName);
+            $jsonContet = file_get_contents($this->fileName);
 
-            $contentArray = ($jsonToDecode) ? json_decode($jsonToDecode, true) : array();
-            
-            foreach($contentArray as $content)
+            $arrayToDecode = ($jsonContet ) ? json_decode ($jsonContet,true):array();
+
+            //var_dump($arrayToDecode);
+
+            foreach($arrayToDecode as $valuesArray)
             {
-                $admin = new Admin();
-                $admin->setAdminName($content["userName"]);
-                $admin->setPassword($content["password"]);
+                $user = new Admin();
 
-                array_push($this->adminList, $admin);
+                $user->setAdminName($valuesArray["name"]);
+                $user->setPassword($valuesArray["password"]);
+
+                array_push($this->userList,$user);
+
+                //var_dump($this->userList);
             }
+
         }
-    }  
+
+    }
+
+
+
+
+       
+
+
 
 }
-
 
 
 

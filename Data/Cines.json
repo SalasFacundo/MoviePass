@@ -1,12 +1,23 @@
 [
     {
-        "idCine": "1",
-        "nombreCine": "Cine Loco",
-        "salas": "4"
+        "idCine": "2",
+        "nombreCine": "Cine de Facu",
+        "salas": "4",
+        "direccion": "Calle falsa 124",
+        "precio": "500"
     },
     {
-        "idCine": "2",
-        "nombreCine": "Cinema2",
-        "salas": "5"
+        "idCine": "1",
+        "nombreCine": "Cine de Diego",
+        "salas": "2",
+        "direccion": "Calle Falsa 123",
+        "precio": "600"
+    },
+    {
+        "idCine": "3",
+        "nombreCine": "Cine de Nico",
+        "salas": "4",
+        "direccion": "Calle falsa 125",
+        "precio": "500"
     }
 ]

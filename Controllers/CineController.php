@@ -12,12 +12,13 @@
         public function __construct(){
             $this->cineDao = new CineDao();
         }
-        public function showAddView($mensaje){
-            require_once(VIEWS_PATH."index.php");
+        public function showAddView(){
+            require_once(VIEWS_PATH."adminCine.php");
         }
 
-        public function Add($nombre, $id){
+        public function Add($nombre, $id, $direccion, $precio, $salas ){
             
+
             $cineNuevo = new Cine();
             $mensaje = '';
             $todosLosCines = $this->cineDao->getAll();
@@ -33,6 +34,9 @@
             if(!$repite){
                 $cineNuevo->setNombreCine($nombre);
                 $cineNuevo->setIdCine($id);
+                $cineNuevo->setDireccion($direccion);
+                $cineNuevo->setPrecio($precio);
+                $cineNuevo->setSalas($salas);
 
                 $this->cineDao->add($cineNuevo);
                 $mensaje = 'Cine agregado correctamente!';
@@ -43,7 +47,16 @@
 
             //var_dump($cineNuevo);
             
-            $this->showAddView($mensaje);
+            $this->showAddView();
+        }
+
+
+        public function EditCine($id, $nombre, $direccion, $precio, $salas )
+        {
+             $this->cineDao->EditarCine($nombre, $id, $direccion, $precio, $salas);
+
+             $this->showAddView();
+            /// volver a la vista y mostrar el mensaje que retorna la funcion de editar en el dao
         }
 
         public function removeCine ($id){
@@ -51,7 +64,7 @@
             $todosLosCines = $this->cineDao->getAll();
             $mensaje = $this->cineDao->eliminarCine($id);
              
-            $this->showAddView($mensaje);
+            $this->showAddView();
             
 
         }

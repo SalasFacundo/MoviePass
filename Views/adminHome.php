@@ -5,10 +5,24 @@
 
 <?php
 
-    if($_POST)    
+
+    if(isset($_POST["genero"]))    
+    {
+
         $genero_filtro=$_POST["genero"];
+        $fecha_filtro=$_POST["fecha"];
+        $fecha_action=$_POST["fecha_action"];
+
+
+        
+    }        
     else
+    {
+        $fecha_action="off";
         $genero_filtro="Todas";
+    }
+        
+        
 
 ?>
 
@@ -79,26 +93,15 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Example select</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <label for="exampleFormControlSelect1">Filtrar por fecha</label>
+                                    
+                                        <input type="date"  name="fecha" value="2018-07-22"><br>
+                                        <input type="radio" name=fecha_action value=on> Activar por fecha
+                                        <input type="radio" name=fecha_action value=off checked> Desactivar por fecha
                                     </select>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Example select</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
+                               
 
                                 <button type="submit" class="btn btn-primary">filtrar</button>
 
@@ -126,6 +129,7 @@
                     <?php 
                     
                     $peliculas=[];
+                    $peliculas_filtradas=[];
                     for ($i=1; $i < 10; $i++) { 
                        
                         $peliculas2= file_get_contents("http://api.themoviedb.org/3/movie/upcoming?api_key=a813ce03ea202b120e2307c4325bd6c3&language=es-ES&page=".$i);
@@ -133,55 +137,20 @@
                         $peliculas=array_merge($peliculas, $peliculas2);
                     }
                     
+                    var_dump($peliculas[0]);
+                    
                     $id_genero_form=null;
                     
 
                     if($genero_filtro=="Todas")
                     {
 
-
-                        foreach ($peliculas as $pelicula) {
-                          
-
-
-                            ?>
-                        
-                        <div class="row" id="card-pelicula">
-                                    <div class="col-sm-9">
-
-                                        <div class="card" id="card">
-                                            <img src= <?php echo"https://image.tmdb.org/t/p/w342/".$pelicula['poster_path']?>
-                                            
-                                                class="card-img-top img-fluid " alt="Responsive image">
-
-                                            <div class="card-body">
-
-                                                <h5 class="card-title"><?php echo $pelicula['title']?></h5>
-
-                                                <p class="card-text"><?php echo $pelicula['overview']?></p>
-                                            </div>
-
-                                        </div>
-
-
-
-                                    </div>
-
-                                    <div class="col-sm-3"><?php                  ?>
-
-                                        <br>
-                                        <button type="button" class="btn btn-warning">Warning</button>
-                                        <br>
-                                        <br>
-                                        <button type="button" class="btn btn-danger">Danger</button>
-                                    </div>
-
-                                </div>
-
-                                <?php             }          
+                        $peliculas_filtradas=$peliculas;                            
 
                     }
-                    else{
+                    else  
+                    {
+
                         for ($i=0; $i <sizeof($generos) ; $i++) 
                         { 
 
@@ -189,27 +158,55 @@
                             $id_genero_form= $generos[$i]["id"];
 
                             if (in_array( $id_genero_form, $peliculas[$i]['genre_ids']))
-                            {
-                            
+                            {                           
 
-
+                                array_push($peliculas_filtradas, $peliculas[$i]);                               
                                 
-                                ?>
+                            } 
+                        }  
 
+                        
+                    }
+
+                    if($fecha_action=="on")
+                        { 
+                            
+                            $peliculas_para_filtrar=$peliculas_filtradas;
+                            $peliculas_filtradas=[];
+
+                            for ($i=0; $i <sizeof($peliculas_para_filtrar) ; $i++) 
+                            {
+                                if($peliculas_para_filtrar[$i]["release_date"]==$fecha_filtro)
+                                {
+                                    array_push($peliculas_filtradas, $peliculas[$i]);
+                                }
+                            }
+                            
+                            
+                            
+                        }
+
+                        foreach ($peliculas_filtradas as $pelicula ) {
+                           
+                        
+                            
+                    
+                            
+                            ?>
 
                                     <div class="row" id="card-pelicula">
                                         <div class="col-sm-9">
 
                                             <div class="card" id="card">
-                                                <img src= <?php echo"https://image.tmdb.org/t/p/w342/".$peliculas[$i]['poster_path']?>
+                                                <img src= <?php echo"https://image.tmdb.org/t/p/w342/".$pelicula['poster_path']?>
                                                 
                                                     class="card-img-top img-fluid " alt="Responsive image">
 
                                                 <div class="card-body">
 
-                                                    <h5 class="card-title"><?php echo $peliculas[$i]['title']?></h5>
+                                                    <h5 class="card-title"><?php echo $pelicula['title']?></h5>
 
-                                                    <p class="card-text"><?php echo $peliculas[$i]['overview']?></p>
+                                                    <p class="card-text"><?php echo $pelicula['overview']?></p>
                                                 </div>
 
                                             </div>
@@ -230,27 +227,14 @@
                                     </div>
 
 
-
-
-
-
                                     <?php
-                                
-                            }
 
+                       
                            
 
+                        }
 
-                        }  
-                                              
-                    }
-                            
                             ?>
-
-
-
-
-
 
                    
 
@@ -266,17 +250,6 @@
                     
 
                     
-
-                    
-
-
-
-
-
-
-
-
-
 
 
 
@@ -324,44 +297,6 @@
 
 
     </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <script src="https://code.jquery.com/jquery.js"></script>

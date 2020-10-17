@@ -42,10 +42,7 @@
                 $mensaje = 'Ya existe un admin con ese User Name!';
             }
             
-            
-            
 
-            //var_dump($cineNuevo);
             
             $this->showAddView($mensaje);
         }
