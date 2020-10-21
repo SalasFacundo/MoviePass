@@ -10,14 +10,13 @@ require_once "../DAO/FuncionDao.php";
  {
  	private $numero_sala;
  	private $id_pelicula;
- 	private $hora;
+ 	private $hora_inicio;
+    private $hora_final;
  	
  	function __construct()
  	{
  		
  	}
-
-
 
  
     
@@ -33,27 +32,38 @@ require_once "../DAO/FuncionDao.php";
     }
 
     
-    public function getPelicula()
+    public function getIdPelicula()
     {
         return $this->id_pelicula;
     }
 
     
-    public function setPelicula($id_pelicula)
+    public function setIdPelicula($id_pelicula)
     {
         $this->id_pelicula = $id_pelicula;
     }
 
     
-    public function getHora()
+    public function getHoraInicio()
     {
-        return $this->hora;
+        return $this->hora_inicio;
     }
 
     
-    public function setHora($hora)
+    public function setHora($hora_inicio)
     {
-        $this->hora = $hora;
+        $this->hora_inicio = $hora_inicio;
+    }
+
+    public function getHoraFinal()
+    {
+        return $this->hora_final;
+    }
+
+    
+    public function setHora($hora_final)
+    {
+        $this->hora_final = $hora_final;
     }
 
 
@@ -67,13 +77,6 @@ require_once "../DAO/FuncionDao.php";
 }
 
 
-  $funcion=new Funcion();
-
-    $funcion->setHora("hora1");
-    $funcion->setPelicula("pelicula1");
-    $funcion->setSala("sala1");
-    $repo= new FuncionDao();
-    $repo->add($funcion);
 
 
 ?>
