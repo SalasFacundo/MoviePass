@@ -133,10 +133,12 @@
                     for ($i=1; $i < 10; $i++) { 
                        
                         $peliculas2= file_get_contents("http://api.themoviedb.org/3/movie/upcoming?api_key=a813ce03ea202b120e2307c4325bd6c3&language=es-ES&page=".$i);
+                        
                         $peliculas2= json_decode($peliculas2, true)["results"];
                         $peliculas=array_merge($peliculas, $peliculas2);
                     }
                     
+
                     var_dump($peliculas[0]);
                     
                     $id_genero_form=null;
