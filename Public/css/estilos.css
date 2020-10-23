@@ -1,0 +1,193 @@
+#caja{
+
+    text-align: center;
+
+    
+}
+
+
+#formulario-index{
+
+    background-image: url(https://media3.giphy.com/media/fJKG1UTK7k64w/giphy.gif?cid=ecf05e47dyn0se3qwr70kqs72w430bdy8j1lg24jcbqqm9hv&rid=giphy.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 800px;
+
+}
+
+
+
+
+
+
+
+
+
+#inicio{
+
+    height: 920px;
+
+    
+    background-image: url(../img/cine-1.jpg);
+    
+    background-position: no-repeat  center;
+
+    background-size: cover;
+
+
+}
+
+
+#adm-cine{
+
+
+    height: 920px;
+
+    
+    background-image: url(../img/cine-2.jpg);
+    
+    background-position: no-repeat  center;
+
+    background-size: cover;
+    
+
+}
+
+/*
+#caja0{
+
+    height: 700px;
+   background-color: red;
+}
+
+
+
+#caja1{
+
+   
+    background-color: khaki;
+    
+}
+
+#caja2{
+    
+    background-color: lightcoral;
+    
+}
+
+#caja3{
+ 
+        background-color: lightseagreen;
+
+}
+
+*/
+
+
+
+
+
+/* css del formulario*/
+
+
+
+
+.container-list{
+
+    margin-top: 100px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    
+    background-color: #ffffff;
+
+
+
+}
+
+.container-delete{
+
+    margin-top: 200px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 500px;
+    height: 300px;
+
+    
+    
+
+    border-radius: 30px;
+
+
+    text-align: center;
+
+    
+
+    background-color: #ffffff;
+
+
+
+
+}
+
+.container-filtro{
+
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    padding-bottom: 20px;
+
+    
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 300px;
+   
+    
+    
+    border-radius: 30px;
+
+
+    text-align: center;
+
+    
+
+    background-color: #ffffff;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

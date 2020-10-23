@@ -9,6 +9,14 @@
 
     <link href="<?php echo CSS_PATH;?>bootstrap.min.css" rel="stylesheet" media="screen">
 
+    <?php 
+
+    use DAO\CineDao as CineDao;
+    $cineDao = new CineDao();
+
+    $todosLosCines = $cineDao->getAll()
+    
+    ?>
 
 </head>
 
@@ -25,20 +33,17 @@
     <section>
 
 
-        <div class="container-fluid">
+        <div class="container-fluid" id="conteinerCine">
 
 
-            <div class="row">
+            
 
-                <div class="col-4"></div>
 
-                <div class="col-4">
-                    <h2>ESTOY EN LA PAGINA DE ADMINITRACION DE EMPLEADOS</h2>
-                </div>
+        
+       
 
-                <div class="col-4"></div>
 
-            </div>
+        
 
 
 
@@ -49,19 +54,22 @@
 
 
 
-
-
-
     </section>
 
 
 
-    <footer></footer>
+    <footer>
+
+        <a href="<?= FRONT_ROOT ?>/Home/Index" class="btn btn-info" role="button" aria-pressed="true">ir al INDEX</a>
+
+        <br>
 
 
 
 
 
+
+    </footer>
 
 
 

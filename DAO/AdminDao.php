@@ -7,8 +7,6 @@ use Models\Admin as Admin;
 
 class AdminDAO {
 
-    private $userList = array();
-    private $fileName;
 
 
     public function __construct()

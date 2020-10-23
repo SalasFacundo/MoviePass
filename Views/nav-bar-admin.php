@@ -1,45 +1,81 @@
 
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top "style="background-color:black">
-<a id="logo" class="navbar-brand font-weight-bold" href="<?= FRONT_ROOT ?>/Home/AdminHome">ADMINISTRADOR CINE</a>   
 
-  <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="menu" >
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    
-  <ul class="navbar-nav   ml-auto text-center" >
+    <a id="logo" class="navbar-brand font-weight-bold" href="<?= FRONT_ROOT ?>/Home/Inicio">ADMINISTRADOR CINE</a>
 
-        <li class="nav-item  ">
-        <a class="nav-link " href="<?= FRONT_ROOT ?>/Home/AdminHome">INGRESAR PELICULA </a>
-        </li>
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <li class="nav-item">
-        <a class="nav-link" href="<?= FRONT_ROOT ?>/Home/AdminCine">ADMINISTRAR CINE</a>
-        </li>
-
-        <li class="nav-item">
-        <a class="nav-link" href="<?= FRONT_ROOT ?>/Home/AdminUsers">ADMINISTRAR USUARIOS</a>
-        </li>
-
-        <li class="nav-item">
-        <a class="nav-link" href="<?= FRONT_ROOT ?>/Home/AdminEmpleados">ADMINISTRAR EMPLEADOS</a>
-        </li>
-
-    </ul>
+        <ul class="navbar-nav   ml-auto text-center">
+            
+            <li class="nav-item  ">
+                <a class="nav-link " href="<?= FRONT_ROOT ?>/Home/Inicio">INICIO </a>
+            </li>
 
 
-    <form class="form-inline my-2 my-lg-0 ml-auto ">
-    
-    
+            <li class="nav-item  ">
+                <a class="nav-link " href="<?= FRONT_ROOT ?>/Home/AdminHome">INGRESAR PELICULA </a>
+            </li>
 
-    <a href="<?= FRONT_ROOT ?>/Login/Logout" class="btn btn-success" role="button" aria-pressed="true">cerrar sesion</a>
 
-    </form>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    SUCURSALES
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="<?= FRONT_ROOT ?>/Home/AdminCine">Ingresar nuevo cine</a>
+                    <a class="dropdown-item" href="<?= FRONT_ROOT ?>/Home/AdminCine2">Modificar cine</a>
+                    <a class="dropdown-item" href="<?= FRONT_ROOT ?>/Home/AdminCine3">Eliminar cine</a>
+                    <a class="dropdown-item" href="<?= FRONT_ROOT ?>/Home/AdminCine4">Lista de cines</a>
+                </div>
+            </li>
 
-    
+            <li class="nav-item  ">
+                <a class="nav-link " href="">CARTELERA</a>
+            </li>
 
-  </div>
-  
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     USUARIOS
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="">Ingresar nuevo usuario</a>
+                    <a class="dropdown-item" href="">Modificar usuario</a>
+                    <a class="dropdown-item" href="">Eliminar usuarios</a>
+                    <a class="dropdown-item" href="">Lista de usuarios</a>
+                </div>
+            </li>
+
+            
+
+            
+
+            
+
+        </ul>
+
+        <!--
+        <form class="form-inline my-2 my-lg-0 ">
+
+
+
+            <a href="<?= FRONT_ROOT ?>/Login/Logout" class="btn btn-success" role="button" aria-pressed="true">cerrar
+                sesion</a>
+
+        </form>
+
+        -->
+
+
+
+    </div>
+
 </nav>
+  
