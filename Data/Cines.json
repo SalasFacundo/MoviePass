@@ -1,17 +1,17 @@
 [
     {
         "idCine": "2",
-        "nombreCine": "Cine de Facu",
-        "salas": "4",
-        "direccion": "Calle falsa 124",
-        "precio": "500"
+        "nombreCine": "Cine de Facundo",
+        "salas": "-2",
+        "direccion": "        ",
+        "precio": "-200"
     },
     {
         "idCine": "1",
         "nombreCine": "Cine de Diego",
         "salas": "2",
         "direccion": "Calle Falsa 123",
-        "precio": "600"
+        "precio": "500"
     },
     {
         "idCine": "3",
