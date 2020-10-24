@@ -24,64 +24,25 @@
 
         <section class="row" id="caja0">
 
+            <div class="col-sm-4" id="caja1"> </div>
 
+            <div class="col-sm-4" id="caja2"> <!-- CAJA DE LISTA DE USIARIOS--->
+               
 
-
-            <div class="col-sm-3" id="caja1">
-
-            <div class="row container-delete">
-
-                    <div class="col-sm-12">
-
-                        <h2>ELIMINAR SUCURSAL</h2>
-
-                        <form action="#" method="post">
-
-                            <div class="form-group">
-                                <label for="">NUMERO DE ID</label>
-
-                                <input type="number" class="form-control" name="id"
-                                    placeholder="Numero de id de cine a borrar">
-
-                            </div>
-                            <div class="form-group">
-
-                                <button type="submit" class="btn btn-primary">Aceptar</button>
-
-                            </div>
-
-
-
-
-
-                        </form>
-
-
-                    </div>
-
-
-                </div>
-
-
-
-
-            </div>
-            <div class="col-sm-8" id="caja2">
-
-                <div class="row container-list" >
+                <div class="row container-list">
 
                     <div class="col-sm-12">
 
-                        <h2>LISTA DE SUCURSALES</h2>
+                        <h2>LISTA DE USUARIOS</h2>
 
                         <table class="table table-striped ">
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>
-                                    <th scope="col">Nombre cine</th>
-                                    <th scope="col">Cantidad de salas</th>
-                                    <th scope="col">Direccion</th>
-                                    <th scope="col">Precio de la entrada</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellido</th>
+                                    <th scope="col">Edad</th>
+                                    <th scope="col">Tipo de usuario</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -91,7 +52,6 @@
                                 <tr>
                                     <td></td>
                                     <td></td>
-
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -118,10 +78,14 @@
 
 
             </div>
-            
+
+            <div class="col-sm-4" id="caja3"></div>
 
 
         </section>
+
+
+
 
     </main>
 

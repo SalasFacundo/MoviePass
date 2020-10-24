@@ -35,9 +35,18 @@
                     <a class="dropdown-item" href="<?= FRONT_ROOT ?>/Home/AdminCine4">Lista de cines</a>
                 </div>
             </li>
+            
+            <li class="nav-item dropdown  ">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    CARTELERA
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="<?= FRONT_ROOT ?>/Home/AdminNuevaFuncion">Ingresar nueva funcion</a>
+                    <a class="dropdown-item" href="">------</a>
+                    
+                </div>
 
-            <li class="nav-item  ">
-                <a class="nav-link " href="">CARTELERA</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -46,17 +55,17 @@
                      USUARIOS
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="">Ingresar nuevo usuario</a>
+                    <a class="dropdown-item" href="<?= FRONT_ROOT ?>/Home/AdminAgregarUsuario">Ingresar nuevo usuario</a>
                     <a class="dropdown-item" href="">Modificar usuario</a>
                     <a class="dropdown-item" href="">Eliminar usuarios</a>
-                    <a class="dropdown-item" href="">Lista de usuarios</a>
+                    <a class="dropdown-item" href="<?= FRONT_ROOT ?>/Home/AdminListarUsuarios">Lista de usuarios</a>
                 </div>
             </li>
 
             
 
             
-
+            
             
 
         </ul>

@@ -42,27 +42,26 @@
 
 #adm-cine{
 
+    height: 100vmin;
 
-    height: 920px;
-
-    
+    /*
     background-image: url(../img/cine-2.jpg);
-    
+    */
     background-position: no-repeat  center;
 
     background-size: cover;
     
-
 }
 
 /*
 #caja0{
 
-    height: 700px;
-   background-color: red;
+    height: auto;
+
+   background-color: rgb(139, 23, 23);
 }
 
-
+*/
 
 #caja1{
 
@@ -83,90 +82,12 @@
 
 }
 
-*/
 
 
 
 
 
-/* css del formulario*/
 
-
-
-
-.container-list{
-
-    margin-top: 100px;
-
-    margin-left: auto;
-    margin-right: auto;
-
-
-    border-radius: 30px;
-
-    text-align: center;
-
-    
-    background-color: #ffffff;
-
-
-
-}
-
-.container-delete{
-
-    margin-top: 200px;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    width: 500px;
-    height: 300px;
-
-    
-    
-
-    border-radius: 30px;
-
-
-    text-align: center;
-
-    
-
-    background-color: #ffffff;
-
-
-
-
-}
-
-.container-filtro{
-
-    margin-top: 100px;
-    margin-bottom: 100px;
-
-    padding-bottom: 20px;
-
-    
-
-    margin-left: auto;
-    margin-right: auto;
-
-    width: 300px;
-   
-    
-    
-    border-radius: 30px;
-
-
-    text-align: center;
-
-    
-
-    background-color: #ffffff;
-
-
-}
 
 
 

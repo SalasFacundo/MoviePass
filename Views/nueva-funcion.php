@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -25,47 +24,46 @@
 
         <section class="row" id="caja0">
 
+            <div class="col-sm-4" id="caja1"> </div>
 
-
-
-            <div class="col-sm-4" id="caja1"></div>
-            <div class="col-sm-4" id="caja2">
-
-
-                <div class="row container-form">
+            <div class="col-sm-4" id="caja2"> <!-- CAJA DE NUEVA FUNCION--->
+               
+            
+            <div class="row container-form">
 
                     <div class="col-sm-12">
-                    <h2>NUEVA SUCURSAL</h2>
+                    <h2>NUEVA FUNCION</h2>
 
                     <form action="">
                     <div class="form-group">
-                        <label for="">Nombre de la sucursal </label>
-                        <input type="text" class="form-control" name="nombre" placeholder="Nombre de la sucursal...">
+                        <label for=""> NUMERO DE SALA</label>
+                        <input type="number" class="form-control" name="" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for=""> ID PELICULA</label>
+                        <input type="number" class="form-control" name="" placeholder="">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for=""> FECHA</label>
+                        <input type="date" class="form-control" name="" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for=""> HORA DE INICIO</label>
+                        <input type="time" class="form-control" name="" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for=""> HORA DE FINALIZACION</label>
+                        <input type="time" class="form-control" name="" placeholder="">
                     </div>
 
                     
                     
                    
-                    <div class="form-group">
-                        <label for="">Direccion - Nombre calle</label>
-                        <input type="text" class="form-control" name="" placeholder="Nombre de la calle...">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Direccion - Numero calle</label>
-                        <input type="Number" class="form-control" name="" placeholder="Numero de la calle...">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Precio de la entrada</label>
-                        <input type="Number" class="form-control" name="" placeholder="Precio de la entrada...">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Cantidad de salas</label>
-                        <input type="Number" class="form-control" name="" placeholder="Cantidad de salas...">
-                    </div>
-
+                    
 
                     <button type="submit" class="btn btn-primary mb-2">ACEPTAR</button>
                     
@@ -83,17 +81,17 @@
 
 
 
+
+
             </div>
 
             <div class="col-sm-4" id="caja3"></div>
 
 
-
-
-
-
-
         </section>
+
+
+
 
     </main>
 

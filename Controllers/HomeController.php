@@ -60,6 +60,22 @@
             require_once(VIEWS_PATH."adminEmpleados.php");
         }
         
+
+
+        public function AdminAgregarUsuario($message = "")
+        {
+            require_once(VIEWS_PATH."nuevo-usuario.php");
+        }
+
+        public function AdminListarUsuarios($message = "")
+        {
+            require_once(VIEWS_PATH."listar-usuarios.php");
+        }
+
+        public function AdminNuevaFuncion($message = "")
+        {
+            require_once(VIEWS_PATH."nueva-funcion.php");
+        }
         
     }
 ?>
