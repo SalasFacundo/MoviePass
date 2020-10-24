@@ -1,0 +1,136 @@
+/* ESTRUCTURA DEL FORMULARIO */
+.container-form{
+
+    display:  ruby;
+    margin-top: 120px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 550px;
+    border-radius: 30px;
+    text-align: center;
+
+    background-color: #ffffff;
+
+}
+
+
+.form-control{
+
+    
+    display: block;
+    width: 90%;
+
+    margin-left: auto;
+
+    margin-right: auto;
+    
+    
+
+    border-radius: 10px;
+
+    border: 2px solid #000000;
+    
+    
+}
+
+label{
+
+    text-align: center;
+    
+    font-weight: bold;
+    display: inline-block;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: rgb(255, 0, 0);
+    border-color: rgb(255, 0, 0);
+
+    border-radius: 5px;
+
+    font-weight: bolder;
+}
+
+
+
+
+/* CONTENEDOR DE LA LISTA DE CINES */
+.container-list{
+
+    margin-top: 100px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    
+    background-color: #ffffff;
+
+
+
+}
+
+
+/*  FORMULARIO DE ELEMINAR CINE*/
+
+.container-delete{
+
+    margin-top: 200px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 500px;
+    height: 300px;
+
+    
+    
+
+    border-radius: 30px;
+
+
+    text-align: center;
+
+    
+
+    background-color: #ffffff;
+
+}
+
+/* FILTRO DE LA PAGINA INGRESAR PELICULA */
+
+
+
+.container-filtro{
+
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    padding-bottom: 20px;
+
+    
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 300px;
+   
+    
+    
+    border-radius: 30px;
+
+
+    text-align: center;
+
+    
+
+    background-color: #ffffff;
+
+
+}

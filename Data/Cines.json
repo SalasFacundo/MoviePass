@@ -19,5 +19,12 @@
         "salas": "4",
         "direccion": "Calle falsa 125",
         "precio": "500"
+    },
+    {
+        "idCine": "123",
+        "nombreCine": "cine 1234",
+        "salas": "123",
+        "direccion": "123",
+        "precio": "123"
     }
 ]
