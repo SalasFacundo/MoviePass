@@ -20,15 +20,25 @@
 
 
 
-
-
-
-
-
 #inicio{
 
     height: 920px;
 
+    /*
+    background-image: url(../img/cine-1.jpg);
+    */
+    background-position: no-repeat  center;
+
+    background-size: cover;
+
+    background-color: red;
+
+
+}
+
+.adm-cine-home {
+
+    height: 100vh;
     
     background-image: url(../img/cine-1.jpg);
     
@@ -36,7 +46,26 @@
 
     background-size: cover;
 
+    
+}
 
+
+.adm-cine-container {
+    height: 100vh ;
+    
+    background-image: url(../img/cine-2.jpg);
+    
+    
+
+    
+    
+    
+}
+
+
+.adm-cine-row {
+
+    height: 100%;
 }
 
 
@@ -63,20 +92,20 @@
 
 */
 
-#caja1{
+.caja1{
 
    
     background-color: khaki;
     
 }
 
-#caja2{
+.caja2{
     
     background-color: lightcoral;
     
 }
 
-#caja3{
+.caja3{
  
         background-color: lightseagreen;
 
@@ -85,7 +114,11 @@
 
 
 
+.footer-class{
 
+    background-color: royalblue;
+    height: 100px;
+}
 
 
 

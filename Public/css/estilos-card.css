@@ -1,74 +1,19 @@
-.card{
-
-    
-    background-color: none; 
-    background-clip: none; 
-    border: none; 
-    border-radius: none;
-    
-    margin-top: 20px;
 
 
-    border-bottom: 3px solid  white;
+.contenedor-card{
 
-    background-color: transparent;
-
-    padding-bottom: 10px;
-
-
-
-   
+   background-color: rgba(255, 0, 0, 0);
+   margin-top: 30px;
 }
 
 
+.card-pelicula{
 
-.contendor-card {
-
-   background-color:transparent;
-
-   
-   margin-top: 40px;
-
-
-
-}
-
-/*<!-- CAMBIARLE EL NOMBRE--> */
-.card6{
-
-   
-
-   padding-right: 30px;
-
-   border-bottom: 10px solid rgba(216, 209, 209, 0.445);
-
+   background-color: rgba(192, 192, 192, 0);
    padding-bottom: 10px;
-   
-   
-}
-
-
-.container-card{
-
-   
-   padding-top: 100px;
-
-   
-   width: 1200px;
-
-   height: 360px;
-   
-   margin-left: auto;
-   margin-right: auto;
-
-   
-
-   display: inline;
-
-   
+   border-bottom: 5px solid white;
 
 }
-
 
 
 .col-img-card{
@@ -79,65 +24,34 @@
 }
 
 
-.card-imagen-pelicula{
-
-   padding-top: 30px;
-   padding-bottom: 10px;
-   margin-left: auto;
-   margin-right: auto;
-   
-}
-
-
 .imagen-card{
 
    width: 100%;
 
-   border-bottom: 2px solid red;
+   border-bottom: 2px solid white;
 
-   border-top: 2px solid red;
+   border-top: 2px solid white;
 
-   border-left: 2px solid red;
+   border-left: 2px solid white;
 
-   border-right: 2px solid red;
+   border-right: 2px solid white;
 
 
 }
 
 
-.no-gutters{
 
-   
 
-   display: inline-flex;
-
-   /*
-
-   border-bottom: 5px solid green;
-   
-   border-top: 3px solid green;
-
-   border-left:3px solid green ;
-   border-right:3px solid green ;
-   */
-}
 
 .card-body{
 
-
-   height: 250px;
+   background-color: rgba(105, 90, 205, 0);
 
    color: white;
 
-   
+
    
 }
 
 
-.boton-card{
 
-
-   text-align: left;
-  
-
-}

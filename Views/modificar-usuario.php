@@ -4,11 +4,13 @@
 <main class="container-fluid adm-cine-container">
 
     <div class="row adm-cine-row">
-        <div class="col-4"></div>
+        <div class="col-4"> </div>
+        
         <div class="col-4">
+
             <div class="row container-form">
                 <div class="col-12">
-                    <h2 class="subrayadoh2">NUEVO USUARIO</h2>
+                    <h2 class="subrayadoh2">MODIFICAR USUARIO</h2>
                     <form action="">
                         <div class="form-group">
                             <label for="">NOMBRE </label>
@@ -25,16 +27,16 @@
                         <div class="form-group">
                             <label for="">TIPO DE DNI</label>
                             <select class="form-control" id="" name="">
-                                    <option selected>Seleccionar tipo de dni</option>
-                                    <option >LIBRETA ELECTORAL O DNI</option>
-                                    <option >CARNET DE EXTRANJERIA</option>
-                                    <option >CARNET DE EXTRANJERIA</option>
-                                    <option >PASAPORTE</option>
-                                    <option >OTROS</option>
-                                </select>
+                                <option selected>Seleccionar tipo de dni</option>
+                                <option>LIBRETA ELECTORAL O DNI</option>
+                                <option>CARNET DE EXTRANJERIA</option>
+                                <option>CARNET DE EXTRANJERIA</option>
+                                <option>PASAPORTE</option>
+                                <option>OTROS</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="">NUMERO DE DNI</label>
+                            <label for="">NUMERO</label>
                             <input type="number" class="form-control" name="" placeholder="">
                         </div>
                         <div class="form-group">
@@ -60,6 +62,7 @@
                     </form>
                 </div>
             </div>
+
         </div>
         <div class="col-4"></div>
     </div>

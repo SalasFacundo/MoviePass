@@ -18,7 +18,7 @@
         public function ShowAddView()
         {
             require_once(VIEWS_PATH."validate-session.php");       
-            require_once(VIEWS_PATH."adminHome.php");
+            require_once(VIEWS_PATH."HomeCineAdmin.php");
 
         }
 

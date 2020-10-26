@@ -1,139 +1,61 @@
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <?php      include("linkcss.php")            ?>
+<?php require_once(VIEWS_PATH."header.php"); ?>
 
 
+<main class="container-fluid adm-cine-container">
 
-</head>
-
-<body>
-
-    <header>
-
-        <?php     include("nav-bar-admin.php");             ?>
-
-    </header>
-
-
-
-    <main class="container-fluid" id="adm-cine">
-
-        <section class="row" id="caja0">
-
-
-            <div class="col-sm-4" id="caja1">
-
-
-            </div>
-            <div class="col-sm-4" id="caja2">
-
-
-                <div class="row container-form">
-
-                    <div class="col-sm-12">
-
-                    <h2>MODIFICAR SUCURSAL</h2>
-
+    <div class="row adm-cine-row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            
+            <div class="row container-form">
+                <div class="col-12">
+                    <h2 class="subrayadoh2">MODIFICAR SUCURSAL</h2>
                     <form action="">
-
-
-
                         <div class="form-group">
                             <label for=""> LISTA DE SUCURSALES</label>
                             <select class="form-control">
                                 <option value="">--Seleccione una Sucursal--</option>
                             </select>
                         </div>
-
-
-
                         <div class="form-group">
                             <label for="">NOMBRE CINE</label>
-                            <input type="text" class="form-control" name="nombre" placeholder="Nombre del cine...">
+                            <input type="text" class="form-control" name="" placeholder="">
                         </div>
-
                         <div class="form-group">
-                            <label for="">DIRECCION</label>
-
-                            <input type="text" class="form-control" name="direccion"
-                                placeholder="Nombre de la calle - numero...">
-
+                            <label for="">DIRECCION -CALLE</label>
+                            <input type="text" class="form-control" name=""
+                                placeholder="">
                         </div>
-
+                        <div class="form-group">
+                            <label for="">DIRECCION -ALTURA</label>
+                            <input type="text" class="form-control" name=""
+                                placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="">CODIGO POSTAL</label>
+                            <input type="text" class="form-control" name=""
+                                placeholder="">
+                        </div>
                         <div class="form-group">
                             <label for="">PRECIO ENTRADA</label>
-
-                            <input type="text" class="form-control" name="precio" placeholder="$...">
-
+                            <input type="text" class="form-control" name="" placeholder="">
                         </div>
-
                         <div class="form-group">
                             <label for="">CANTIDAD SALAS</label>
-
-                            <input type="number" class="form-control" name="salas"
-                                placeholder="Numero de total de salas...">
-
+                            <input type="number" class="form-control" name=""
+                                placeholder="">
                         </div>
-
                         <div class="form-group">
-
-                            <button type="submit" class="btn btn-primary mb-2">ACEPTAR</button>
-
+                            <button type="submit" class="btn btn-form mb-3">ACEPTAR</button>
                         </div>
-
-
                     </form>
-
-
-
                 </div>
-
-
-
-                </div>
-
-                
-
-
 
             </div>
-            <div class="col-sm-4" id="caja3"></div>
+            
+        </div>
+        <div class="col-4"></div>
 
+</main>
 
-        </section>
-
-    </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <footer>
-        <br>
-        <a href="<?= FRONT_ROOT ?>/Home/Index" class="btn btn-info" role="button" aria-pressed="true">ir al INDEX</a>
-
-
-
-
-
-    </footer>
-
-
-
-    <?php      include("jscss.php")            ?>
-
-</body>
-
-</html>
+<?php         require_once(VIEWS_PATH."footer.php");         ?>
