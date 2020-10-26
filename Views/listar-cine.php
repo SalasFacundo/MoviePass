@@ -1,121 +1,66 @@
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <?php      include("linkcss.php")            ?>
+<?php require_once(VIEWS_PATH."header.php"); ?>
 
 
+<main class="container-fluid adm-cine-container">
 
-</head>
+    <div class="row adm-cine-row">
 
-<body>
-
-    <header>
-
-        <?php     include("nav-bar-admin.php");             ?>
-
-    </header>
-
-
-
-    <main class="container-fluid" id="adm-cine">
-
-        <section class="row" id="caja0">
-
-
-
-
-            <div class="col-sm-4" id="caja1">
-
-
-            </div>
-            <div class="col-sm-4" id="caja2">
-
-                <div class="row container-list" >
-
-                    <div class="col-sm-12">
-
-                        <h2>LISTA DE SUCURSALES</h2>
-
-                        <table class="table table-striped ">
-                            <thead>
-                                <tr>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">Nombre cine</th>
-                                    <th scope="col">Cantidad de salas</th>
-                                    <th scope="col">Direccion</th>
-                                    <th scope="col">Precio de la entrada</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-
-
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-
-                                </tr>
-
-
-                                </tr>
-
-
-
-                            </tbody>
-                        </table>
-
-
-                    </div>
-
-
-
+        <div class="col-3">
+            <div class="row container-delete">
+                <div class="col-12">
+                    <h2 class="subrayadoh2">ELIMINAR SUCURSAL</h2>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="">NUMERO DE ID</label>
+                            <input type="number" class="form-control" name="id"placeholder="Numero de id de cine a borrar">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-form mb-3">Aceptar</button>
+                        </div>
+                    </form>
                 </div>
-
-
-
-
-
             </div>
-            <div class="col-sm-4" id="caja3"></div>
+        </div>
+
+        <div class="col-9">
+            <div class="row container-list">
+
+                <div class="col-12">
+                    <h2 class="subrayadoh2">LISTA DE SUCURSALES</h2>
+                    <table class="table table-striped ">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre cine</th>
+                                <th scope="col">Cantidad de salas</th>
+                                <th scope="col">Direccion - calle</th>
+                                <th scope="col">Direccion - altura</th>
+                                <th scope="col">Codigo postal</th>
+                                <th scope="col">Precio de la entrada</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-        </section>
-
-    </main>
 
 
+</main>
 
-
-
-
-
-
-
-
-
-
-
-    <footer>
-        <br>
-        <a href="<?= FRONT_ROOT ?>/Home/Index" class="btn btn-info" role="button" aria-pressed="true">ir al INDEX</a>
-
-
-
-
-
-    </footer>
-
-
-
-    <?php      include("jscss.php")            ?>
-
-</body>
-
-</html>
+<?php         require_once(VIEWS_PATH."footer.php");         ?>

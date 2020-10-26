@@ -10,3 +10,5 @@
 
 
 <link href="<?php echo CSS_PATH;?>estilos-card.css" rel="stylesheet" type="text/css" media="all">
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet"> <!--- ESTILO DEL H2 ---->
