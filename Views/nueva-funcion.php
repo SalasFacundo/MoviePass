@@ -11,6 +11,10 @@
                     <h2 class="subrayadoh2">NUEVA FUNCION</h2>
                     <form action="">
                         <div class="form-group">
+                            <label for=""> CINE</label>
+                            <input type="number" class="form-control" name="" placeholder="">
+                        </div>
+                        <div class="form-group">
                             <label for=""> NUMERO DE SALA</label>
                             <input type="number" class="form-control" name="" placeholder="">
                         </div>
@@ -19,16 +23,8 @@
                             <input type="number" class="form-control" name="" placeholder="">
                         </div>
                         <div class="form-group">
-                            <label for=""> FECHA</label>
-                            <input type="date" class="form-control" name="" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for=""> HORA DE INICIO</label>
-                            <input type="time" class="form-control" name="" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for=""> HORA DE FINALIZACION</label>
-                            <input type="time" class="form-control" name="" placeholder="">
+                            <label for=""> FECHA Y HORA DE INICIO</label>
+                            <input type="datetime-local" class="form-control" name="" placeholder="">
                         </div>
                         <button type="submit" class="btn btn-form mb-3">ACEPTAR</button>
                     </form>
