@@ -29,14 +29,8 @@ label{
 
 .btn-form {
     color: #fff;
-<<<<<<< HEAD
-    background-color: rgb(255, 0, 0);
-    border-color: rgb(255, 0, 0);
-
-=======
     background-color: #f72501;
     border-color: red;
->>>>>>> Nico
     border-radius: 5px;
     font-weight: bolder;
 }

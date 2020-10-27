@@ -38,25 +38,12 @@
                         </div>
                         <div class="form-group">
                             <label for="">PRECIO ENTRADA</label>
-<<<<<<< HEAD
-
-                            <input type="text" class="form-control" name="precio" placeholder="$..." min="100">
-
-=======
                             <input type="text" class="form-control" name="" placeholder="">
->>>>>>> Nico
                         </div>
                         <div class="form-group">
                             <label for="">CANTIDAD SALAS</label>
-<<<<<<< HEAD
-
-                            <input type="number" class="form-control" name="salas"
-                                placeholder="Numero de total de salas..." min="0">
-
-=======
                             <input type="number" class="form-control" name=""
                                 placeholder="">
->>>>>>> Nico
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-form mb-3">ACEPTAR</button>
