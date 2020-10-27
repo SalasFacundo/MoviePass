@@ -1,7 +1,9 @@
 
-<?php      include("linkcss.php")            ?>
+<?php      include("linkcss.php")?>
+
 <main class="container-fluid">
-    <div class="row">
+
+        <div class="row">
             <div class="col-4"></div>
             <div class="col-4">
                 <div class="container-formulario-login">
@@ -11,12 +13,12 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">          
+                                aria-describedby="emailHelp"> 
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
                             <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>   
+                        </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <br><br>
                         <div class="form-group">
@@ -25,7 +27,7 @@
                         <br>
                         <h4>O</h4>
                         <br>
-                        <div class="social-inline">   
+                        <div class="social-inline">
                         <a href="#" class="btn btn-login-redes "><span class="icon-facebook"></span>  
                         INICIAR SESION CON FACEEBOOK</a>
                         </div>
@@ -33,10 +35,9 @@
                 </div>
             </div>
             <div class="col-4">
-
-            <a href="<?= FRONT_ROOT ?>Home/AdminHome" class="btn btn-success" role="button" aria-pressed="true">IR AL ADMINHOME</a>
-
+                <a href="<?= FRONT_ROOT ?>Home/AdminHome" class="btn btn-success" role="button" aria-pressed="true">IR AL ADMINHOME</a>
             </div>
         </div>
-</main>
+
+    </main>
     <?php      include("jscss.php")            ?>

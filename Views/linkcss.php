@@ -8,7 +8,16 @@
 
 <link href="<?php echo CSS_PATH;?>estilos-formulario.css" rel="stylesheet" type="text/css" media="all">
 
+<link href="<?php echo CSS_PATH;?>estilos-contenedores.css" rel="stylesheet" type="text/css" media="all">
+
+<link href="<?php echo CSS_PATH;?>estilos-botones.css" rel="stylesheet" type="text/css" media="all">
+
 
 <link href="<?php echo CSS_PATH;?>estilos-card.css" rel="stylesheet" type="text/css" media="all">
 
+
+
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet"> <!--- ESTILO DEL H2 ---->
+
+
+<link href="<?php echo CSS_PATH;?>/icomoon/style.css" rel="stylesheet">
