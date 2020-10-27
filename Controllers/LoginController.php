@@ -80,9 +80,17 @@
 
 
 
+        public function Registrarse()
+        {
+            require_once(VIEWS_PATH."registrarse.php");
+
+        }
        
 
     }
+
+
+    
 
 
 ?>

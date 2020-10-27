@@ -1,20 +1,7 @@
-/* ESTRUCTURA DEL FORMULARIO */
-.container-form{
-    display:  flex;
-    margin-top: 120px;
-    margin-bottom: 120px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    border-radius: 30px;
-    text-align: center;
-    background-color: #ffffff;
-}
-
 
 .form-control{
     display: block;
-    width: 90%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto; 
     border-radius: 10px;
@@ -27,102 +14,22 @@ label{
     display: inline-block;
 }
 
-.btn-form {
-    color: #fff;
-    background-color: #f72501;
-    border-color: red;
-    border-radius: 5px;
-    font-weight: bolder;
-}
-
-.btn-peliculas{
-    color: #fff;
-    background-color: #ebe984;
-    border-color: red;
-    border-radius: 5px;
-    font-weight: bolder;
-}
 
 
-
-
-/* CONTENEDOR DE LA LISTA DE CINES */
-.container-list{
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 30px;
-    text-align: center;
-    display: inline-flex;
-    background-color: #ffffff;
-    width: 100%;
-}
-
-
-
-
-/*  FORMULARIO DE ELEMINAR CINE*/
-
-.container-delete{
-    margin-top: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    border-radius: 30px;
-    text-align: center;
-    display: inline-flex;
-    background-color: #ffffff;
-}
-
-
-/* FILTRO DE LA PAGINA INGRESAR PELICULA */
-
-
-
-.container-filtro{
-    margin-top: 100px;
-    margin-bottom: 100px;
-    padding-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px;
-    border-radius: 30px;
-    text-align: center;
-    background-color: #ffffff;
-}
-
-.subrayadoh2{
-    
+.subrayadoh2{ 
     padding-top: 5px;
     border-bottom: 5px solid #f72501;
     padding-bottom: 5px;
-    font-family: 'Archivo Black', sans-serif;
-    
-    
+    font-family: 'Archivo Black', sans-serif;  
 }
 
 
 
-.container-modificar{
-    margin-top: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    border-radius: 30px;
-    text-align: center;
-    display: inline-flex;
-    background-color: #ffffff;
+
+.formulario-registro{
+    padding-bottom: 50px;
 }
 
-
-.container-rol-usuario{
-    margin-top: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    border-radius: 30px;
-    text-align: center;
-    display: inline-flex;
-    background-color: #ffffff;
+.formulario-registro-facebook{
+    padding:30px; 
 }
-
