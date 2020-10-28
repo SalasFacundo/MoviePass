@@ -56,7 +56,7 @@
                                 <th scope="col">Numero de Dni</th>
                                 <th scope="col">Edad</th>
                                 <th scope="col">Tipo de usuario</th>
-                                <th scope="col">Eliminar</th>
+                                <th scope="col">Editar</th>
 
                             </tr>
                         </thead>
@@ -70,24 +70,12 @@
                                 <td>32</td>
                                 <td>USER</td>
                                 <td>
-                                    
+                                    <a href="" class=" ml-3"><i class="fas fa-edit"></i> </a>
                                     <a href="" class=" ml-3"><i class="fas fa-trash"></i> </a>
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td>1</td>
-                                <td>ADRIAN</td>
-                                <td>PEREZ</td>
-                                <td>DNI</td>
-                                <td>123123123</td>
-                                <td>32</td>
-                                <td>USER</td>
-                                <td>
-                                    
-                                    <a href="" class=" ml-3"><i class="fas fa-trash"></i> </a>
-                                </td>
-                            </tr>
+                            
 
                 
                         </tbody>

@@ -73,7 +73,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="<?= FRONT_ROOT ?>/Home/AdminAgregarUsuario">Ingresar nuevo usuario</a>
                 <a class="dropdown-item" href="<?= FRONT_ROOT ?>/Home/AdminModificarUsuario">Modificar usuario</a>
-                <a class="dropdown-item" href="">Eliminar usuarios</a>
+                <a class="dropdown-item" href="#">------------</a>
                 <a class="dropdown-item" href="<?= FRONT_ROOT ?>/Home/AdminListarUsuarios">Lista de usuarios</a>
             </div>
         </li>
