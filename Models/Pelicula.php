@@ -8,14 +8,17 @@ namespace Models;
  class Pelicula
  {
  	
- 	private $id_pelicula;
- 	private $titulo;
-    private $hora_inicio;
-    private $duracion;
-    private $sinopsis;
-    private $poster_link;
-    private $lenguaje;
-    private $fecha_lanzamiento;
+ 	private $Id_pelicula;
+ 	private $Titulo;
+    private $Sinopsis;
+    private $Poster_link;
+    private $Lenguaje;
+    private $Fecha_lanzamiento;
+    private $Duracion;
+    private $Activo;
+    
+    
+    
  	
  	function __construct()
  	{
@@ -24,103 +27,105 @@ namespace Models;
 
 
    
+
+
+
+
+    
     public function getIdPelicula()
     {
-        return $this->id_pelicula;
+        return $this->Id_pelicula;
     }
 
     
-    public function setIdPelicula($id_pelicula)
+    public function setIdPelicula($Id_pelicula)
     {
-        $this->id_pelicula = $id_pelicula;
+        $this->Id_pelicula = $Id_pelicula;
     }
 
-   
+    
     public function getTitulo()
     {
-        return $this->titulo;
+        return $this->Titulo;
     }
 
     
-    public function setTitulo($titulo)
+    public function setTitulo($Titulo)
     {
-        $this->titulo = $titulo;
-    }
-
-   
-    public function getHoraInicio()
-    {
-        return $this->hora_inicio;
+        $this->Titulo = $Titulo;
     }
 
     
-    public function setHoraInicio($hora_inicio)
-    {
-        $this->hora_inicio = $hora_inicio;
-    }
-
-   
-    public function getDuracion()
-    {
-        return $this->duracion;
-    }
-
-    
-    public function setDuracion($duracion)
-    {
-        $this->duracion = $duracion;
-    }
-
-
     public function getSinopsis()
     {
-        return $this->sinopsis;
+        return $this->Sinopsis;
     }
 
     
-    public function setSinopsis($sinopsis)
+    public function setSinopsis($Sinopsis)
     {
-        $this->sinopsis = $sinopsis;
+        $this->Sinopsis = $Sinopsis;
     }
 
     
     public function getPosterLink()
     {
-        return $this->poster_link;
+        return $this->Poster_link;
     }
 
     
-    public function setPosterLink($poster_link)
+    public function setPosterLink($Poster_link)
     {
-        $this->poster_link = $poster_link;
+        $this->Poster_link = $Poster_link;
     }
 
     
     public function getLenguaje()
     {
-        return $this->lenguaje;
+        return $this->Lenguaje;
     }
 
     
-    public function setLenguaje($lenguaje)
+    public function setLenguaje($Lenguaje)
     {
-        $this->lenguaje = $lenguaje;
+        $this->Lenguaje = $Lenguaje;
     }
 
     
     public function getFechaLanzamiento()
     {
-        return $this->fecha_lanzamiento;
+        return $this->Fecha_lanzamiento;
     }
 
     
-    public function setFechaLanzamiento($fecha_lanzamiento)
+    public function setFechaLanzamiento($Fecha_lanzamiento)
     {
-        $this->fecha_lanzamiento = $fecha_lanzamiento;
+        $this->Fecha_lanzamiento = $Fecha_lanzamiento;
     }
 
+    
+    public function getDuracion()
+    {
+        return $this->Duracion;
+    }
 
+    
+    public function setDuracion($Duracion)
+    {
+        $this->Duracion = $Duracion;
+    }
 
+    
+    public function getActivo()
+    {
+        return $this->Activo;
+    }
+
+    
+    public function setActivo($Activo)
+    {
+        $this->Activo = $Activo;
+    }
 } 
     
 

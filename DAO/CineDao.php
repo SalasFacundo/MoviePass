@@ -1,184 +1,252 @@
 <?php 
 
-    namespace DAO ;
+namespace DAO ;
 
-    //require "../Config/Autoload.php";
+require "../Config/Base_de_datos.php";
+require "../Models/Cine.php";
 
-    //Autoload::start();
+use Config\base_datos as base_datos;
+use Models\Cine as Cine;
 
-    use Models\Cine as Cine;
 
-    class CineDao {
-
-        
-        private $cinemaList = array();
-        private $fileName;
-
-        public function __construct()
-        {
-            
-            $this->fileName = dirname(__DIR__).'/Data/Cines.json';
-    
-            
-        }
-
-        function add($cine){
-
-            $this->readFile();
-            
-            array_push($this->cinemaList,$cine);
-            $this->saveData();
-        }
-
-        function getAll(){
-            $this->readFile();
-            return $this->cinemaList;
-        }
-
-        function getFileName(){
-            return $this->fileName;
-        }
+class CineDao 
+{
 
 
 
-        public function posCine($id){
-            
-            $pos= -1;
-            $this->readFile();
-            
-            for($i=0; $i < count($this->cinemaList); $i++){
-                if($this->cinemaList[$i]->getIdCine()===$id){
-                    $pos=$i;
-    
-                } 
-            }
-    
-            return $pos;
-        }
 
 
-
-    public function eliminarCine($id)
+    public function __construct()
     {
-        $this->readFile();
-        $pos=$this->posCine($id);
 
-            if ($pos!=-1) {
-                unset($this->cinemaList[$pos]);  
-    
-            }
-                  
-        $this->SaveData();   
-    
-    
+
+
     }
 
-    function agregarSalaAlCine ($sala, $cineId){
-
-        $this->readFile();
-
-        $pos = $this->posCine($cineId);
-        
-        if($pos != -1){
-            // Falta checkear que el numero de sala no se repita
-            $salasDelCine = $this->cinemaList[$pos]->getSalas();
-            array_push($salasDelCine, $sala);
-
-            $this->cinemaList[$pos]->setSalas($salasDelCine);
-           
-            $this->saveData();
 
 
+        function add($cine)
+        {
+
+            $conexion=base_datos::conectar();
+
+
+
+
+            
+                $nombre=$cine->getNombre();
+                $calle=$cine->getCalle();
+                $altura=$cine->getAltura();
+                $codigo=$cine->getCodigoPostal();
+                $activo=$cine->getActivo();
+
+                $sql=" INSERT INTO Cine (Nombre, Calle, Altura, Codigo_postal, Activo) 
+
+                VALUES ('$nombre', '$calle', '$altura', '$codigo', '$activo' )";
+
+                var_dump(base_datos::comprobar_query($conexion, $sql));
+            
+
+            $conexion->close();
         }
 
 
-    }
+        function getAll()
+        {          
 
-    public function EditarCine ($nombre, $id, $direccion, $precio, $salas){
+            $conexion=base_datos::conectar();
+            $sql="SELECT * FROM CINE";            
 
-        $pos = $this->posCine($id);
-        $mensaje = 'No se encontro el id del cine buscado';
-        if($pos != -1){
-            if($nombre != ''){
-                $this->cinemaList[$pos]->setNombreCine($nombre);
-            }
-            
-            if($direccion != ''){
-                $this->cinemaList[$pos]->setDireccion($direccion);
-            }
+            $resultado=$conexion->query($sql); 
 
-            if($precio != ''){
-                $this->cinemaList[$pos]->setPrecio($precio);
-            }
+            $cines=[];
 
-            if($salas != ''){
-                $this->cinemaList[$pos]->setSalas($salas);
-            }
+             while($fila=$resultado->fetch_assoc())
+                array_push($cines,$this->crearCine($fila));
 
-            
-            
+            $conexion->close();
 
-            $mensaje = 'Cine editado correctamente';
-
-            $this->saveData();
-        } 
-
-        return $mensaje;
-
-    }
-
-        function saveData(){
-            $arrayToEncode = array();
-
-            foreach($this->cinemaList as $cine){
-
-                $valuesArray['idCine'] = $cine->getIdCine();
-                $valuesArray['nombreCine'] = $cine->getNombreCine();
-                $valuesArray['salas'] = $cine->getSalas();
-                $valuesArray['direccion'] = $cine->getDireccion();
-                $valuesArray['precio'] = $cine->getPrecio();
-                array_push($arrayToEncode, $valuesArray);
-
-            }
-
-            $jsonContent = json_encode($arrayToEncode,JSON_PRETTY_PRINT);
-
-            
-            file_put_contents($this->fileName,$jsonContent);
-            
-            
+            return $cines;            
         }
 
 
 
-        function readFile(){
 
-            $this->cinemaList = array();
 
-            if(file_exists($this->fileName)){
+        function getActivos()
+        {
 
-            $jsonContent = file_get_contents($this->fileName);
 
-            $arrayContent = ($jsonContent) ? json_decode($jsonContent,true) : array();
+            $conexion=base_datos::conectar();
+            $sql="SELECT * FROM CINE WHERE ACTIVO=1";            
 
-            foreach($arrayContent as $cinema){
-                $cine = new Cine();
+            $resultado=$conexion->query($sql); 
+
+            $cines=[];
+
+            while($fila=$resultado->fetch_assoc())
+                array_push($cines,$this->crearCine($fila));
+
+            $conexion->close();
+
+            return $cines;            
+        }
+
+
+
+
+        function modificarCine($id, $cineNuevo)
+        {
+
+         $conexion=base_datos::conectar();
+
+
+
+         $nombre=$cineNuevo->getNombre();
+         $calle=$cineNuevo->getCalle();
+         $altura=$cineNuevo->getAltura();
+         $codigo=$cineNuevo->getCodigoPostal();
+         $activo=$cineNuevo->getActivo();
+
+
+
+         $sql="            
+
+
+         UPDATE Cine
+         SET 
+         Nombre = '$nombre',
+         Calle='$calle',
+         Altura='$altura',
+         Codigo_postal='$codigo',
+         Activo='$activo'
+         WHERE Id_cine='$id';                
+
+
+         ";
+
+         var_dump(base_datos::comprobar_query($conexion, $sql));
+
+
+         $conexion->close();
+
+
+     }
+
+
+
+
+
+
+
+     function traerPorNombre($nombre)
+     {
+
+        $conexion=base_datos::conectar();
+        $sql="SELECT * FROM CINE WHERE NOMBRE='$nombre'";            
+
+        $resultado=$conexion->query($sql); 
+
+
+
+        $fila=$resultado->fetch_assoc();
+
+
+        $cine = $this->crearCine($fila);
+
+
+
+        $conexion->close();
+
+        return $cine;  
+
+    }
+
+    function traerPorId($id)
+    {
+
+        $conexion=base_datos::conectar();
+        $sql="SELECT * FROM CINE WHERE Id_cine='$id'";            
+
+        $resultado=$conexion->query($sql); 
+
+
+
+        $fila=$resultado->fetch_assoc();
+
+
+        $cine = $this->crearCine($fila);
+
+        $conexion->close();
+
+        return $cine;  
+
+    }
+
+
+    function altaBaja($id, $valor)
+    {
+
+        $conexion=base_datos::conectar();
+
+
+
+        $sql="            
+
+
+        UPDATE Cine
+        SET
+        Activo='$valor'
+        WHERE Id_cine='$id';";
+
+        var_dump(base_datos::comprobar_query($conexion, $sql));
+        $conexion->close();
+    }
+
+    private function crearCine($fila)
+    {
+        $cine = new Cine();
+
+        $cine->setIdCine($fila['Id_cine']);
+        $cine->setNombre($fila['Nombre']);
+        $cine->setCalle($fila['Calle']);
+        $cine->setAltura($fila['Altura']);
+        $cine->setCodigoPostal($fila['Codigo_postal']);
+        $cine->setActivo($fila['Activo']);
+
+
+        return $cine;
+    }
+
+
+
+}
+
+
+
+
+
+
+                /*$cineDao = new CineDao();
                 
-                $cine->setIdCine($cinema['idCine']);
-                $cine->setNombreCine($cinema['nombreCine']);
-                $cine->setSalas($cinema['salas']);
-                $cine->setPrecio($cinema['precio']);
-                $cine->setDireccion($cinema['direccion']);
-
-                array_push($this->cinemaList,$cine);
-            }
-
-            
-        }
+                var_dump($cineDao->getActivos());
 
 
-        }
+                $cine= new Cine();
 
-    }
-    
-?>
+                $cine->setNombre("Nombre3");
+                $cine->setCalle("Calle1");
+                $cine->setAltura(123);
+                $cine->setCodigoPostal(123);
+                $cine->setActivo(true);
+
+                $cineDao->add($cine);
+
+                var_dump($cineDao->traerPorId(1));
+
+                //$cineDao->modificarCine(3, $cine);
+
+                //$cineDao->altaBaja(3, true);
+*/
+                
+                ?>
