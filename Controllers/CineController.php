@@ -13,7 +13,6 @@
             $this->cineDao = new CineDao();
         }
         public function showAddView(){
-            
             require_once(VIEWS_PATH."adminCine.php");
         }
 

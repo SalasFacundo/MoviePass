@@ -12,7 +12,7 @@ class AdminDAO {
     public function __construct()
     {
             $this->fileName = dirname(__DIR__)."/Data/Admin.json";
-    }
+     }
 
 
     public function Add($user)
