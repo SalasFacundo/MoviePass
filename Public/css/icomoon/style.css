@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?14a0li');
+  src:  url('fonts/icomoon.eot?14a0li#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?14a0li') format('truetype'),
+    url('fonts/icomoon.woff?14a0li') format('woff'),
+    url('fonts/icomoon.svg?14a0li#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak-as: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+
+.icon-facebook:before {
+  content: "\e900";
+  color: #ffffff;
+  font-size: 25px;
+  padding: 10px;
+
+
+  
+}
+
+
+
+.social-inline{
+
+  display: inline-block;
+  
+}
+
+
+
+
+
+.btn-login-redes{
+  
+  background-color: rgb(26, 30, 231);
+  margin-left: 20px;
+  margin-right: 20px;
+
+  color: #ffffff;
+
+  text-align: justify;
+  
+}
+
+
+
+.btn-login-redes:hover{
+
+  background-color: chartreuse;
+
+}
+
+.btn {
+  display: inline-flex;
+  
+}

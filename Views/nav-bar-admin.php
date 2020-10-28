@@ -35,6 +35,19 @@
                 <a class="dropdown-item" href="<?= FRONT_ROOT ?>/Home/AdminCine4">Lista de cines</a>
             </div>
         </li>
+
+        <li class="nav-item dropdown  ">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                SALAS
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="<?= FRONT_ROOT ?>/Home/AdminIngresarDatoSalas">Ingresar datos a la sala</a>
+                <a class="dropdown-item" href="<?= FRONT_ROOT ?>/Home/AdminListarSalas">Lista de salas</a>
+                
+            </div>
+
+        </li>
         
         <li class="nav-item dropdown  ">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -43,11 +56,14 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="<?= FRONT_ROOT ?>/Home/AdminNuevaFuncion">Ingresar nueva funcion</a>
-                <a class="dropdown-item" href="">------</a>
+                <a class="dropdown-item" href="">Lista de funciones</a>
                 
             </div>
 
         </li>
+
+
+        
 
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
