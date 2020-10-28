@@ -17,14 +17,6 @@
     }
 
 
-<<<<<<< HEAD
-    */
-
-    public function Inicio($message = "")
-    {
-        require_once(VIEWS_PATH."HomeCineAdmin.php");
-    }
-=======
         /** INICIO DEL HOME ADMIN CINE  */
         public function Inicio($message = "")
         {
@@ -32,7 +24,6 @@
         }
 
         /** INGRESAR PELICULA */
->>>>>>> 1725533dddacb376fca91f6e177cd670a3341e86
 
 
     public function AdminHome($message = "")

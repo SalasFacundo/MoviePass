@@ -14,6 +14,7 @@
                             
                             <select class="form-control" id="" name="genero">
                             <option selected>Seleccionar genero</option>
+                            <option value="Todas">Todas</option>
                             <?php foreach($generos as $genero) :?>
                                 <?php if($genero_filtro == $genero["name"] ){?>
                                     <option selected><?php echo $genero["name"] ?></option>
@@ -49,7 +50,10 @@
         <div class="row contenedor-card col-12 ">
             <?php// echo count($peliculas_filtradas); ?>
             
-            <?php /* foreach($peliculas_filtradas as $pelicula) */ for($i=0; $i< count($peliculas_filtradas) ; $i++) :?>
+            <?php /* foreach($peliculas_filtradas as $pelicula)  */  
+          
+            
+            for($i=0; $i< count($peliculas_filtradas) ; $i++) :?>
             
                 <!--   inicio  de LA CARD  -->
                 <div class="col-6 card-pelicula ">
