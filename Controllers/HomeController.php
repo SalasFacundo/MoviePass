@@ -19,16 +19,20 @@
 
         */
 
+        /** INICIO DEL HOME ADMIN CINE  */
         public function Inicio($message = "")
         {
             require_once(VIEWS_PATH."HomeCineAdmin.php");
         }
 
+        /** INGRESAR PELICULA */
 
         public function AdminHome($message = "")
         {
             require_once(VIEWS_PATH."ingresar-pelicula.php");
         }
+
+        /**  SUCURSALES */
 
         public function AdminCine($message = "")
         {
@@ -50,17 +54,11 @@
         }
 
 
-        public function AdminUsers($message = "")
-        {
-            require_once(VIEWS_PATH."adminUsers.php");
-        }
-
-        public function AdminEmpleados($message = "")
-        {
-            require_once(VIEWS_PATH."adminEmpleados.php");
-        }
+        
+       
         
 
+                /**USUARIOS  */
 
         public function AdminAgregarUsuario($message = "")
         {
@@ -77,12 +75,33 @@
             require_once(VIEWS_PATH."listar-usuarios.php");
         }
 
+        /** FUNCION  */
         public function AdminNuevaFuncion($message = "")
         {
             require_once(VIEWS_PATH."nueva-funcion.php");
         }
+    
+        public function AdminListarFunciones($message = "")
+        {
+            require_once(VIEWS_PATH."listar-funciones.php");
+        }
 
-        
+
+            /** SALAS   */
+
+
+        public function AdminIngresarDatoSalas($message = "")
+        {
+            require_once(VIEWS_PATH."ingresar-datos-sala.php");
+        }
+
+        public function AdminListarSalas($message = "")
+        {
+            require_once(VIEWS_PATH."listar-salas.php");
+        }
+
+
+
         
             
 

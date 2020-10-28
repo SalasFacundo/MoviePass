@@ -98,3 +98,31 @@ text-align: center;
     display: inline-flex;
     background-color: #ffffff;
 }
+
+.container-sala{
+
+
+    
+
+    background-color: #ffffff;
+
+    margin-top: 100px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+
+}
+
+.container-lista-sala{
+
+    background-color: #ffffff;
+    margin-top: 100px;
+    text-align: center;
+
+    height: 500px;
+
+
+
+}
