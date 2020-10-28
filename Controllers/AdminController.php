@@ -12,6 +12,9 @@
             $this->adminDao = new AdminDao();
         }
         public function showAddView($mensaje){
+
+
+            
             require_once(VIEWS_PATH."index.php");
         }
 
