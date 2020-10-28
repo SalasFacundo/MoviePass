@@ -1,4 +1,11 @@
-<?php require_once(VIEWS_PATH."header.php"); ?>
+<?php require_once(VIEWS_PATH."header.php"); 
+
+$resultado_busqueda = $false;
+
+
+
+
+?>
 
 
 <main class="container-fluid adm-cine-container">
@@ -50,10 +57,10 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Apellido</th>
-                                <th scope="col">Tipo de Dni</th>
-                                <th scope="col">Numero de Dni</th>
-                                <th scope="col">Edad</th>
+                                <th scope="col">DNI</th>
+                                <th scope="col">Fecha Nac.</th>
                                 <th scope="col">Tipo de usuario</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -71,10 +78,63 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div> 
+
+            
+            <?php if($resultado_busqueda) {?>
+                <div class="my-5  container">
+                    <h3>Editar info del usuario </h3>
+                    
+                    <form method="GET" action="editar.php">
+                    
+                    <div class="form-group">
+                        <label for="">NOMBRE </label>
+                        <input type="text" class="form-control" name="edit_nombre" value="<?php echo $resultado_busqueda['nombre']?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="">APELLIDO </label>
+                        <input type="text" class="form-control" name="edit_nombre" value="<?php echo $resultado_busqueda['apellido']?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="">DNI</label>
+                        <input type="number" min="5000000" max="50000000" class="form-control" name="edit_apellido" value="<?php echo $resultado_busqueda['dni']?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="">FECHA DE NACIMIENTO </label>
+                        <input type="date" class="form-control" name="edit_nombre" value="<?php echo $resultado_busqueda['fechaNac']?>">
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <label for="">EMAIL </label>
+                        <input type="email" class="form-control" name="edit_nombre" value="<?php echo $resultado_busqueda['email']?>"
+                    </div>
+                    <div class="form-group">
+                        <label for="">PASSWORD </label>
+                        <input type="email" class="form-control" name="edit_pass1" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">REPIA LA PASSWORD </label>
+                        <input type="email" class="form-control" name="edit_pass2" placeholder="">
+                    </div>
+                    
+                    <input type="hidden" name="id" value="<?php echo $resultado_busqueda['id']?>">
+
+                    <button type="submit" class="btn btn-dark  ">Modificar</button>
+                        
+                        
+                        
+                    </form>
+                </div> 
+            <?php }else { ?> 
+
+                <p class="alert bg-warning mt-4 font-weight-bold">No se encontraron resultados</p>
+            <?php } ?>
 
         </div>
 
+
+        
     </div>
 
 </main>
