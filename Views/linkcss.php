@@ -21,3 +21,7 @@
 
 
 <link href="<?php echo CSS_PATH;?>/icomoon/style.css" rel="stylesheet">
+
+
+
+<script src="https://kit.fontawesome.com/73f27ea115.js" crossorigin="anonymous"></script>

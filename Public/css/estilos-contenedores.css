@@ -59,6 +59,21 @@ text-align: center;
 }
 
 
+/*  FORMULARIO DE ELEMINAR CINE*/
+
+.container-buscar-user{
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    border-radius: 30px;
+    text-align: center;
+    display: inline-flex;
+    background-color: #ffffff;
+}
+
+
+
 /* FILTRO DE LA PAGINA INGRESAR PELICULA */
 
 .container-filtro{
@@ -101,28 +116,25 @@ text-align: center;
 
 .container-sala{
 
-
-    
-
     background-color: #ffffff;
-
     margin-top: 100px;
-
     text-align: center;
-
     border-radius: 30px;
-
-
 }
 
 .container-lista-sala{
-
     background-color: #ffffff;
     margin-top: 100px;
     text-align: center;
-
     height: 500px;
+}
 
+.container-footer{
 
+    height:200px;
+
+    text-align: center;
+
+    
 
 }
