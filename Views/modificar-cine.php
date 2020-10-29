@@ -5,7 +5,7 @@ $cineDao = new CineDao();
 
 $allCinemas = $cineDao->getAll();
 
-var_dump($allCinemas);
+//var_dump($allCinemas);
 
 
 require_once(VIEWS_PATH."header.php"); 
@@ -30,7 +30,7 @@ require_once(VIEWS_PATH."header.php");
                             <form action="">
                             <select class="form-control">
                                 <option value="" name="idCine">--Seleccione una Sucursal--</option>
-                                <?php foreach($$allCinemas as $cine)?>
+                                <?php foreach($allCinemas as $cine)?>
                                     <option value=<?php echo $cine->getIdCine(); ?>><?php echo $cine->getNombre()?></option>
                                 <?php ?>
                             </select>

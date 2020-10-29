@@ -36,31 +36,34 @@
                                 <th scope="col">Direccion - calle</th>
                                 <th scope="col">Direccion - altura</th>
                                 <th scope="col">Codigo postal</th>
+                                <th scope="col">Cantidad de salas</th>
+                                <th scope="col">Acciones</th>
                               
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                            <tr>
+                            
+                            
                                 
                                 <?php foreach($allCinemas as $cine) :?>
+                                    <tr>
                                 <td><?php echo $cine->getIdCine() ?></td>
                                 <td><?php echo $cine->getNombre() ?></td>
                                 <td><?php echo $cine->getCalle() ?></td>
                                 <td><?php echo $cine->getAltura() ?></td>
                                 <td><?php echo $cine->getCodigoPostal()?></td>
+                                <td><?php echo $cine->getCantidadSalas()?></td>
                                 
-                                <td></td>
                                 <td>
                                     <a href="<?= FRONT_ROOT ?>/Home/AdminCine4?id=<?php echo $cine->getIdCine() ?>" class=" ml-3"><i class="fas fa-edit"></i> </a>
                                     <a href="" class=" ml-3"><i class="fas fa-trash"></i> </a>
                                 </td>
-                                
+                                </tr>
                                 <?php endforeach ?>
                                 
-                            </tr>
+                           
                             
-                            </tr>
+                            
                             <?php } else {?>
                                     <p class="alert bg-danger">No hay sucursales cargadas</p>
                             <?php }?>
@@ -72,15 +75,17 @@
                     
                     <h3>Editar Informacion del cine</h3>
                     <div class="col-12">
-                    <form method="GET" action="editar.php" class="form-group">
+                    <form method="POST" action="<?= FRONT_ROOT ?>/Home/EditCine" class="form-group">
                         <label for="nombre">Nombre</label>
                         <input type="text" name="nombre" class="form-control" value="<?php echo $cine_editar->getNombre()?>">
                         <label for="nombre">Calle</label>
-                        <input type="text" name="cale" class="form-control" value="<?php echo $cine_editar->getCalle()?>">
+                        <input type="text" name="calle" class="form-control" value="<?php echo $cine_editar->getCalle()?>">
                         <label for="nombre">Altura</label>
                         <input type="text" name="altura" class="form-control" value="<?php echo $cine_editar->getAltura()?>">
                         <label for="nombre">Codigo Postal</label>
                         <input type="text" name="codigoPostal" class="form-control" value="<?php echo $cine_editar->getCodigoPostal()?>">
+                        <label for="nombre">Cantidad de salas</label>
+                        <input type="text" name="cantidadSalas" class="form-control" value="<?php echo $cine_editar->getCantidadSalas()?>">
                     
                         <input type="hidden" name="id" value="<?php echo $cine_editar->getIdCine()?>">
                         <button type="sumit" class="btn btn-block btn-primary mt-3">Editar</button>

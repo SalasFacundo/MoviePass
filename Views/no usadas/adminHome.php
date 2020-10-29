@@ -24,11 +24,10 @@
     <link href="<?php echo CSS_PATH; ?>bootstrap.min.css" rel="stylesheet" media="screen">
 
 
-    <<<<<<< HEAD:Views/no usadas/adminHome.php <?php      include("linkcss.php")            ?>=======</head>
+   <?php      include("linkcss.php")            ?></head>
 
 <body>
-    >>>>>>> cb3e1e6e28d5cc102bb273cdcc3bb39ef5f17481:Views/adminHome.php
-
+   
     <header>
 
         <?php include("nav-bar-admin.php"); ?>
