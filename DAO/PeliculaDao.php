@@ -7,8 +7,8 @@ namespace DAO;
 
 
 
-require "../Config/Base_de_datos.php";
-require_once "../Models/Pelicula.php";
+//require "../Config/Base_datos.php";
+//require_once "../Models/Pelicula.php";
 
 use Config\base_datos as base_datos;
 use Models\Pelicula as Pelicula;
@@ -26,10 +26,17 @@ class PeliculaDao
 
 
      function add($pelicula)
-     {
+     {  
+
+        echo "<pre>";
+        var_dump($pelicula);
+        echo "</pre>";
+        
+       
 
             $conexion=base_datos::conectar();            
-
+                
+                
                             
                 $Titulo=$pelicula->getTitulo();
                 $Sinopsis=$pelicula->getSinopsis();
@@ -39,11 +46,9 @@ class PeliculaDao
                 $Duracion=$pelicula->getDuracion();
                 $Activo=$pelicula->getActivo();
 
-                $sql=" INSERT INTO Pelicula (Titulo, Sinopsis, Poster_link, Lenguaje, Fecha_lanzamiento, Duracion, Activo) 
+                $sql=" INSERT INTO Pelicula (Titulo, Sinopsis, Poster_link, Lenguaje, Fecha_lanzamiento, Duracion, Activo) VALUES ('$Titulo', '$Sinopsis', '$Poster_link', '$Lenguaje', '$Fecha_lanzamiento', '$Duracion', '$Activo' )";
 
-                VALUES ('$Titulo', '$Sinopsis', '$Poster_link', '$Lenguaje', '$Fecha_lanzamiento', '$Duracion', '$Activo' )";
-
-                var_dump(base_datos::comprobar_query($conexion, $sql));            
+                //var_dump(base_datos::comprobar_query($conexion, $sql));            
 
             
             $conexion->close();
@@ -133,7 +138,7 @@ class PeliculaDao
         Activo='$valor'
         WHERE Id_pelicula='$id';";
 
-        var_dump(base_datos::comprobar_query($conexion, $sql));
+        //var_dump(base_datos::comprobar_query($conexion, $sql));
         $conexion->close();
     }
 
@@ -162,7 +167,7 @@ class PeliculaDao
     }
        
 
-
+    /*
 
     $peliculadao= new PeliculaDao();
 
@@ -176,8 +181,8 @@ class PeliculaDao
     $pelicula->setActivo("true");
 
     $peliculadao->add($pelicula);
-    var_dump($peliculadao->getAll());
-
+    //var_dump($peliculadao->getAll());
+    */
 
 
 

@@ -2,8 +2,8 @@
 
 namespace DAO ;
 
-require "../Config/Base_de_datos.php";
-require "../Models/Cine.php";
+//require "../Config/Base_de_datos.php";
+//require "../Models/Cine.php";
 
 use Config\base_datos as base_datos;
 use Models\Cine as Cine;

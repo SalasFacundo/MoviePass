@@ -53,22 +53,22 @@
             <?php /* foreach($peliculas_filtradas as $pelicula)  */  
           
             
-            for($i=0; $i< count($peliculas_filtradas) ; $i++) :?>
+            foreach($peliculas_filtradas as $pelicula) :?>
             
                 <!--   inicio  de LA CARD  -->
                 <div class="col-6 card-pelicula ">
                     <div class="row col-span-2">
                         <div class="col-4 col-img-card ">
-                            <img class="imagen-card img img-fluid" src="<?php echo'https://image.tmdb.org/t/p/w342/' . $peliculas_filtradas[$i]['poster_path'] ?>">
+                            <img class="imagen-card img img-fluid" src="<?php echo'https://image.tmdb.org/t/p/w342/' . $pelicula['poster_path'] ?>">
                         </div>
                         <div class="col-8 card-body d-flex flex-column justify-content-between ">
                             <div>
-                                <h5 class="card-title"><?php echo $peliculas_filtradas[$i]['title'] ?></h5>
-                                <p class="card-text"><?php echo $peliculas_filtradas[$i]['overview'] ?></p>
+                                <h5 class="card-title"><?php echo $pelicula['title'] ?></h5>
+                                <p class="card-text"><?php echo $pelicula['overview'] ?></p>
                             </div>
                             <div>
                             <form action="<?= FRONT_ROOT ?>/Home/AddMovie" method="POST">
-                                <input type="hidden" name="id" value="<?php echo $peliculas_filtradas[$i]['id'] ?>">
+                                <input type="hidden" name="id" value="<?php echo $pelicula['id'] ?>">
                                 <button type="submit">Agregar Pelicula</button>
                             </form>
                             
@@ -80,7 +80,7 @@
                 
                  <!--   fin  de LA CARD  -->
             
-            <?php endfor; ?>
+            <?php endforeach; ?>
             </div>
 
 

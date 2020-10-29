@@ -2,6 +2,8 @@
     namespace Controllers;
     use Models\Pelicula as Pelicula;
     use Dao\PeliculaDao as PeliculaDao;
+    use Dao\CineDao as CineDao;
+    use Dao\FuncionDao as FuncionDao;
 
 
 
@@ -46,7 +48,7 @@
             
             $peli->setTitulo($peliJson['title']);
             $peli->setPosterLink($peliJson['poster_path']);
-            $peli->setSinopsis($peliJson['overview']);
+            $peli->setSinopsis("Esta es una sinopsis");
             $peli->setDuracion($peliJson['runtime']);
             $peli->setFechaLanzamiento($peliJson['release_date']);
             $peli->setLenguaje($peliJson['original_language']);
@@ -57,10 +59,11 @@
             $peliDao = new PeliculaDao();
 
             $peliDao->add($peli);
-            echo '<pre>';
-            var_dump($peliDao->getAll());
-            echo '</pre>';
 
+            $peliculasBD = $peliDao->getAll();
+            
+            
+            require_once(VIEWS_PATH."nueva-funcion.php");
         }
 
 
@@ -139,7 +142,11 @@
         /**  SUCURSALES */
 
         public function AdminCine($message = "")
-        {
+        {   
+            
+
+
+
             require_once(VIEWS_PATH."nuevo-cine.php");
         }
 
@@ -153,7 +160,15 @@
             require_once(VIEWS_PATH."eliminar-cine.php");
         }
         public function AdminCine4($message = "")
-        {
+        {   
+            $cineDao = new CineDao();
+
+            $allCinemas = $cineDao->getAll();
+            if($_GET){
+                $cine_editar = $cineDao->traerPorId($_GET['id']);
+            }
+            
+
             require_once(VIEWS_PATH."listar-cine.php");
         }
 
@@ -184,7 +199,55 @@
         /** FUNCION  */
         public function AdminNuevaFuncion($message = "")
         {
+
+            $peliDao = new PeliculaDao();
+
+            $peliculasBD = $peliDao->getAll();
+
+            var_dump($peliculasBD);
+
             require_once(VIEWS_PATH."nueva-funcion.php");
+        }
+
+
+
+        public function AddFuncion(){
+
+            if($_POST){
+
+                $cine = $_POST['cine'];
+                $numeroSala = $_POST['numeroSala'];
+                $pelicula = $_POST['pelicula'];
+                $cine = $_POST['cine'];
+                $fechaHoraInicio = $_POST['fechaHoraInicio'];
+
+
+                $peli = $daoPelicula->traerPorId($pelicula);
+                $duracion = $peli->getDuracion();
+
+                $fechaHoraFin = calcularFechaFinal($fechaHoraInicio, $duracion);
+
+
+
+                // Comprobar que la fecha y hora de inicio no sea antes a hoy
+
+
+            }
+
+            require_once(VIEWS_PATH."nueva-funcion.php");
+
+        }
+
+        function calcularFechaFinal($fechaInicio, $duracion){
+
+            $fecha = strtotime($fechaInicio);
+    
+            $fechaFinal = $fecha + (($duracion+15) * 60 ) ;
+    
+            //$horaFinal = date("H:i", mktime($h[0],$h[1]+$duracion+15));
+    
+    
+            return $fechaFinal;
         }
     
         public function AdminListarFunciones($message = "")
@@ -202,7 +265,9 @@
         }
 
         public function AdminListarSalas($message = "")
-        {
+        {   
+        
+
             require_once(VIEWS_PATH."listar-salas.php");
         }
 
