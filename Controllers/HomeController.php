@@ -1,11 +1,8 @@
 <?php
     namespace Controllers;
     use Models\Pelicula as Pelicula;
-<<<<<<< HEAD
     use Models\Funcion as Funcion;
-=======
     use Models\Cine as Cine;
->>>>>>> 11041c04b0145904a6b7485e09714865bf313c80
     use Dao\PeliculaDao as PeliculaDao;
     use Dao\CineDao as CineDao;
     use Dao\FuncionDao as FuncionDao;
