@@ -63,7 +63,7 @@
             $peliDao->add($peli);
 
 
-            $cineDao= new CineDao();
+            
            /* echo '<pre>';
             var_dump($peliDao->getAll());
             echo '</pre>';*/
