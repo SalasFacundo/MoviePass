@@ -67,11 +67,15 @@
                                 <p class="card-text"><?php echo $peliculas_filtradas[$i]['overview'] ?></p>
                             </div>
                             <div>
+<<<<<<< Updated upstream
                             <form action="<?= FRONT_ROOT ?>/Home/AddMovie" method="POST">
                                 <input type="hidden" name="id" value="<?php echo $peliculas_filtradas[$i]['id'] ?>">
                                 <button type="submit">Agregar Pelicula</button>
                             </form>
                             
+=======
+                            <a href="#" class="btn btn-peliculas ">Agregar</a>
+>>>>>>> Stashed changes
                             </div>
                         </div>
                     </div>
