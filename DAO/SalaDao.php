@@ -2,126 +2,154 @@
 
     namespace DAO ;
 
-    ///require "../Config/Autoload.php";
+    require "../Config/Base_de_datos.php";
+    require "../Models/Sala.php";
 
-    //Autoload::start();
-
+    use Config\base_datos as base_datos;
     use Models\Sala as Sala;
 
-    class SalaDao {
+    class SalaDao 
+    {
 
-        private $salasList = array();
-        private $fileName;
+       
 
 
         public function __construct(){
-            $this->fileName = dirname(__DIR__).'/Data/Salas.json';
+           
         }
 
-        function Add($sala){
-            $this->readFile();
-            array_push($this->salasList,$sala);
-            $this->saveData();
-        }
 
-        function getAll(){
-            $this->readFile();
-            return $this->salasList;
-        }
 
-        function getFileName(){
-            return $this->fileName;
-        }
 
-        public function posSala($numSala, $idCine){
+
+        function add($cine)
+        {
+
+            $conexion=base_datos::conectar();
+
+
+
+
             
-            $pos= -1;
-            $this->readFile();
-            for($i=0; $i < count($this->salasList); $i++){
-                if($this->salasList[$i]->getIdCine()=== $idCine && $this->salasList[$i]->getNumeroSala()=== $numSala ){
-                    $pos=$i;
-    
-                } 
-            }
-    
-            return $pos;
+                $Id_sala=$cine->getNombre();
+                $Nombre=$cine->getCalle();
+                $Capacidad=$cine->getAltura();
+                $Precio=$cine->getCodigoPostal();
+                $Id_cine=$cine->getCodigoPostal();
+                $Id_tipo_sala=$cine->getCodigoPostal();
+                $activo=$cine->getActivo();
+
+                $sql=" INSERT INTO Sala (Id_sala, Nombre, Capacidad, Precio, Id_cine, Id_tipo_sala, Activo) 
+
+                VALUES ('$Id_sala', '$Nombre', '$Capacidad', '$Precio', '$Id_cine', '$Id_tipo_sala', '$activo' )";
+
+                var_dump(base_datos::comprobar_query($conexion, $sql));
+            
+
+            $conexion->close();
+        }
+
+
+        function getAll()
+        {          
+
+            $conexion=base_datos::conectar();
+            $sql="SELECT * FROM Sala";            
+
+            $resultado=$conexion->query($sql); 
+
+            $salas=[];
+
+             while($fila=$resultado->fetch_assoc())
+                array_push($salas,$this->crearSalas($fila));
+
+            $conexion->close();
+
+            return $salas;            
+        }
+
+
+        function getAll()
+        {          
+
+            $conexion=base_datos::conectar();
+            $sql="SELECT * FROM Sala WHERE ACTIVO=1";            
+
+            $resultado=$conexion->query($sql); 
+
+            $salas=[];
+
+             while($fila=$resultado->fetch_assoc())
+                array_push($salas,$this->crearSalas($fila));
+
+            $conexion->close();
+
+            return $salas;            
         }
 
 
 
-    public function eliminarSala($numSala, $idCine)
+
+
+        function modificarCine($id, $salaNueva)
+        {
+
+         $conexion=base_datos::conectar();
+
+
+         
+         $Nombre=$salaNueva->getNombre();
+         $Capacidad=$salaNueva->getCapacidad();
+         $Precio=$salaNueva->getPrecio();
+         $Id_cine=$salaNueva->getIdCine();
+         $Id_tipo_sala=$salaNueva->getIdTipoSala();
+         $Activo=$salaNueva->getActivo();
+
+
+
+         $sql="            
+
+
+         UPDATE Cine
+         SET          
+         Nombre='$Nombre',
+         Capacidad='$Capacidad',
+         Precio='$Precio',
+         Id_cine='$Id_cine',
+         Id_tipo_sala='$Id_tipo_sala',
+         Activo='$Activo'
+         WHERE Id_cine='$id';                
+
+
+         ";
+
+         var_dump(base_datos::comprobar_query($conexion, $sql));
+
+
+         $conexion->close();
+
+
+     }
+
+
+
+     private function crearSala($fila)
     {
-        $this->readFile();
-        $mensaje = '';
+        $sala = new Sala();
 
-        
-        var_dump($idCine);
-        var_dump($numSala);
-        $pos=$this->posSala($numSala, $idCine);
+        $sala->setIdSala($fila['Id_sala']);
+        $sala->setNombre($fila['Nombre']);
+        $sala->setCapacidad($fila['Capacidad']);
+        $sala->setPrecio($fila['Precio']);
+        $sala->setIdCine($fila['Id_cine']);
+        $sala->setIdTipoSala($fila['Id_tipo_sala']);
+        $sala->setActivo($fila['Activo']);
 
-            if ($pos!=-1) {
-                unset($this->salasList[$pos]);  
-                $mensaje = 'Sala eliminada correctamente';
-            }else{
-                $mensaje = 'Los datos ingresados son incorrectos, no existe el numero de sala o el cine indicado';
-            }
-                  
-        $this->SaveData();   
 
-        return $mensaje;
-    
+        return $cine;
     }
 
-
-
-        function saveData(){
-            $arrayToEncode = array();
-
-            foreach($this->salasList as $sala){
-                $valuesArray['numeroSala'] = $sala->getNumeroSala();
-                $valuesArray['capacidad'] = $sala->getCapacidad();
-                $valuesArray['idCine'] = $sala->getIdCine();
- 
-
-                array_push($arrayToEncode, $valuesArray);
-
-            }
-
-            $jsonContent = json_encode($arrayToEncode,JSON_PRETTY_PRINT);
-
-            file_put_contents($this->fileName,$jsonContent);
-            
-        }
-
-        
-
-        function readFile(){
-
-            $this->salasList = array();
-
-            if(file_exists($this->fileName)){
-
-            $jsonContent = file_get_contents($this->fileName);
-
-            $arrayContent = ($jsonContent) ? json_decode($jsonContent,true) : array();
-
-            foreach($arrayContent as $room){
-                $sala = new Sala();
-                
-                $sala->setIdCine($room['idCine']);
-                $sala->setNumeroSala($room['numeroSala']);
-                $sala->setCapacidad($room['capacidad']);
-                
-
-
-                array_push($this->salasList,$sala);
-            }
-
-            
-        }
-
-
-        }
+       
 
     }
 

@@ -11,15 +11,19 @@ class Funcion
   private $Id_funcion;
   private $Id_sala;
   private $Id_pelicula;
-  private $Hora_inicio;
-  private $Hora_fin;
-  private $Dia;
+  private $Dia_hora_inicio;
+  private $Dia_hora_fin;
   private $Activo;
 
   function __construct()
   {
 
   }
+    
+    
+
+
+
     
     public function getIdFuncion()
     {
@@ -57,39 +61,27 @@ class Funcion
     }
 
     
-    public function getHoraInicio()
+    public function getDiaHoraInicio()
     {
-        return $this->Hora_inicio;
+        return $this->Dia_hora_inicio;
     }
 
     
-    public function setHoraInicio($Hora_inicio)
+    public function setDiaHoraInicio($Dia_hora_inicio)
     {
-        $this->Hora_inicio = $Hora_inicio;
+        $this->Dia_hora_inicio = $Dia_hora_inicio;
     }
 
     
-    public function getHoraFin()
+    public function getDiaHoraFin()
     {
-        return $this->Hora_fin;
+        return $this->Dia_hora_fin;
     }
 
     
-    public function setHoraFin($Hora_fin)
+    public function setDiaHoraFin($Dia_hora_fin)
     {
-        $this->Hora_fin = $Hora_fin;
-    }
-
-    
-    public function getDia()
-    {
-        return $this->Dia;
-    }
-
-    
-    public function setDia($Dia)
-    {
-        $this->Dia = $Dia;
+        $this->Dia_hora_fin = $Dia_hora_fin;
     }
 
     

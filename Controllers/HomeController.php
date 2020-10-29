@@ -33,14 +33,17 @@
         if($_POST){
 
             $id= $_POST['id'];
+            
+            
 
             $pelicula = file_get_contents(
                 "http://api.themoviedb.org/3/movie/".$id."?api_key=a813ce03ea202b120e2307c4325bd6c3&language=en-US");
             
 
             $peliJson = json_decode($pelicula,true);
-            //var_dump($peliJson);
+            
 
+            
 
             $peli = new Pelicula();
             
@@ -52,14 +55,18 @@
             $peli->setLenguaje($peliJson['original_language']);
             $peli->setActivo(true);
 
+            var_dump($peli);
             
             
             $peliDao = new PeliculaDao();
 
             $peliDao->add($peli);
-            echo '<pre>';
+
+
+            $cineDao= new CineDao();
+           /* echo '<pre>';
             var_dump($peliDao->getAll());
-            echo '</pre>';
+            echo '</pre>';*/
 
         }
 

@@ -9,6 +9,7 @@ namespace Models;
     private $Calle;
     private $Altura;
  	private $Codigo_postal;
+    private $Cantidad_salas;
     private $Activo;
 
  	function __construct()
@@ -77,6 +78,20 @@ namespace Models;
         $this->Codigo_postal = $Codigo_postal;
     }
 
+
+
+    public function getCantidadSalas()
+    {
+        return $this->Cantidad_salas;
+    }
+
+    
+    public function setCantidadSalas($Cantidad_salas)
+    {
+        $this->Cantidad_salas = $Cantidad_salas;
+    }
+
+
     
     public function getActivo()
     {
@@ -89,6 +104,9 @@ namespace Models;
         $this->Activo = $Activo;
     }
 
+    
+
+    
     
 } 
 
