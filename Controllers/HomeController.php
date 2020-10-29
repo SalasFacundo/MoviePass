@@ -1,6 +1,7 @@
 <?php
     namespace Controllers;
     use Models\Pelicula as Pelicula;
+    use Models\Cine as Cine;
     use Dao\PeliculaDao as PeliculaDao;
     use Dao\CineDao as CineDao;
     use Dao\FuncionDao as FuncionDao;
@@ -343,9 +344,73 @@
         }
 
 
+        public function AddCine (){
 
+            if($_POST){
+
+                $nombre = $_POST['nombre'];
+                $calle = $_POST['calle'];
+                $altura = $_POST['altura'];
+                $codPostal = $_POST['codPostal'];
+                $cantSalas = $_POST['cantSalas'];
+                
+                $nombre = trim($nombre);
+                $calle = trim($calle);
+                $altura = trim($altura);
+                $codPostal = trim($codPostal);
+                $cantSalas = trim($cantSalas);
+
+
+
+                $cine = new Cine();
+
+                $cine->setNombre($nombre);
+                $cine->setCalle($calle);
+                $cine->setAltura($altura);
+                $cine->setCodigoPostal($codPostal);
+                $cine->setCantidadSalas($cantSalas);
+                $cine->setActivo(true);
+
+                $cineDao = new CineDao();
+
+                $cineDao->add($cine);
+
+
+            }
+
+
+        }
         
-            
+        public function EditCine (){
+
+            if($_POST){
+
+                $nombre = $_POST['nombre'];
+                $calle = $_POST['calle'];
+                $altura = $_POST['altura'];
+                $codigoPostal = $_POST['codigoPostal'];
+                
+                $cantidadDeSalas = $_POST['cantidadSalas'];
+                $id = $_POST['id'];
+
+                $cine = new Cine();
+                $cine->setNombre($nombre);
+                $cine->setCalle($calle);
+                $cine->setAltura($altura);
+                $cine->setCodigoPostal($codigoPostal);
+                $cine->setCantidadSalas($cantidadDeSalas);
+                $cineDao = new CineDao();
+
+                $cineDao->modificarCine($id,$cine);
+
+
+                $this->AdminCine4();
+
+
+            }
+
+
+        }
 
 
 
