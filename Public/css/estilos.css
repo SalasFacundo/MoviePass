@@ -9,14 +9,24 @@
 
 
 .adm-cine-container {
+<<<<<<< HEAD
     /*height: 100vh ;
     background-image: url(../img/cine-2.jpg);   */
     height: 100% ;
+=======
+
+    height: 100% ;
+    
+>>>>>>> feabed0eae26b1af71930b4928ee22cca2454c7f
 }
 
 
 .adm-cine-row {
+<<<<<<< HEAD
     height: 100%;
+=======
+    height:  auto ;
+>>>>>>> feabed0eae26b1af71930b4928ee22cca2454c7f
     background-color: rgb(173, 53, 53);
 }
 

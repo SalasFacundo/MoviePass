@@ -8,61 +8,117 @@ namespace Models;
  class Sala
  {
  	
- 	private $numero_sala;
-    private $capacidad;
-    private $idCine; 
-    private $peliculas = array();
+ 	private $Id_sala;
+    private $Nombre;
+    private $Capacidad; 
+    private $Precio; 
+    private $Id_cine; 
+    private $Id_tipo_sala; 
+    private $Activo; 
+    
  	
  	function __construct()
  	{
  	
- 	}
+ 	}    
 
-     public function getIdCine()
+
+    
+    public function getIdSala()
     {
-        return $this->idCine;
+        return $this->Id_sala;
     }
 
     
-    public function setIdCine($idCine)
+    public function setIdSala($Id_sala)
     {
-        $this->idCine = $idCine;
-    }
-   
-    public function getNumeroSala()
-    {
-        return $this->numero_sala;
+        $this->Id_sala = $Id_sala;
+
+        return $this;
     }
 
     
-    public function setNumeroSala($numero_sala)
+    public function getNombre()
     {
-        $this->numero_sala = $numero_sala;
+        return $this->Nombre;
     }
 
-   
+    
+    public function setNombre($Nombre)
+    {
+        $this->Nombre = $Nombre;
+
+        return $this;
+    }
+
+    
     public function getCapacidad()
     {
-        return $this->capacidad;
+        return $this->Capacidad;
     }
 
     
-    public function setCapacidad($capacidad)
+    public function setCapacidad($Capacidad)
     {
-        $this->capacidad = $capacidad;
+        $this->Capacidad = $Capacidad;
+
+        return $this;
     }
 
-
-
-    public function getPeliculas()
+    
+    public function getPrecio()
     {
-        return $this->peliculas;
+        return $this->Precio;
     }
 
-   
-    public function setPeliculas($peliculas)
+    
+    public function setPrecio($Precio)
     {
-        $this->peliculas = $peliculas;
+        $this->Precio = $Precio;
+
+        return $this;
+    }
+
+    
+    public function getIdCine()
+    {
+        return $this->Id_cine;
+    }
+
+    
+    public function setIdCine($Id_cine)
+    {
+        $this->Id_cine = $Id_cine;
+
+        return $this;
+    }
+
+    
+    public function getIdTipoSala()
+    {
+        return $this->Id_tipo_sala;
+    }
+
+    
+    public function setIdTipoSala($Id_tipo_sala)
+    {
+        $this->Id_tipo_sala = $Id_tipo_sala;
+
+        return $this;
+    }
+
+    
+    public function getActivo()
+    {
+        return $this->Activo;
+    }
+
+    
+    public function setActivo($Activo)
+    {
+        $this->Activo = $Activo;
+
+        return $this;
     }
 } 
 	

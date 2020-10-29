@@ -1,5 +1,9 @@
 <?php
     namespace Controllers;
+    use Models\Pelicula as Pelicula;
+    use Dao\PeliculaDao as PeliculaDao;
+
+
 
     class HomeController
     {
@@ -24,7 +28,46 @@
         }
 
         /** INGRESAR PELICULA */
+    public function AddMovie(){
 
+        if($_POST){
+
+            $id= $_POST['id'];
+
+            $pelicula = file_get_contents(
+                "http://api.themoviedb.org/3/movie/".$id."?api_key=a813ce03ea202b120e2307c4325bd6c3&language=en-US");
+            
+
+            $peliJson = json_decode($pelicula,true);
+            //var_dump($peliJson);
+
+
+            $peli = new Pelicula();
+            
+            $peli->setTitulo($peliJson['title']);
+            $peli->setPosterLink($peliJson['poster_path']);
+            $peli->setSinopsis($peliJson['overview']);
+            $peli->setDuracion($peliJson['runtime']);
+            $peli->setFechaLanzamiento($peliJson['release_date']);
+            $peli->setLenguaje($peliJson['original_language']);
+            $peli->setActivo(true);
+
+            
+            
+            $peliDao = new PeliculaDao();
+
+            $peliDao->add($peli);
+            echo '<pre>';
+            var_dump($peliDao->getAll());
+            echo '</pre>';
+
+        }
+
+
+
+
+
+    }
 
     public function AdminHome($message = "")
     {
@@ -133,6 +176,8 @@
 
         public function AdminListarUsuarios($message = "")
         {
+
+
             require_once(VIEWS_PATH."listar-usuarios.php");
         }
 

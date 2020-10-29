@@ -59,15 +59,19 @@
                 <div class="col-6 card-pelicula ">
                     <div class="row col-span-2">
                         <div class="col-4 col-img-card ">
-                            <img class="imagen-card img img-fluid" src=<?php echo'https://image.tmdb.org/t/p/w342/' . $peliculas_filtradas[$i]['poster_path'] ?>>
+                            <img class="imagen-card img img-fluid" src="<?php echo'https://image.tmdb.org/t/p/w342/' . $peliculas_filtradas[$i]['poster_path'] ?>">
                         </div>
                         <div class="col-8 card-body d-flex flex-column justify-content-between ">
                             <div>
                                 <h5 class="card-title"><?php echo $peliculas_filtradas[$i]['title'] ?></h5>
-                                <p class="card-text"><?php echo $peliculas_filtradas[$i]['overview'] ?> </p>
+                                <p class="card-text"><?php echo $peliculas_filtradas[$i]['overview'] ?></p>
                             </div>
                             <div>
-                            <a href="" class="btn btn-dark">Agregar</a>
+                            <form action="<?= FRONT_ROOT ?>/Home/AddMovie" method="POST">
+                                <input type="hidden" name="id" value="<?php echo $peliculas_filtradas[$i]['id'] ?>">
+                                <button type="submit">Agregar Pelicula</button>
+                            </form>
+                            
                             </div>
                         </div>
                     </div>
@@ -82,9 +86,6 @@
 
         </section>
       
-
-
-
 
 
 

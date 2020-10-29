@@ -2,96 +2,135 @@
 
     namespace DAO ;
 
-   
+    require "../Config/Base_de_datos.php";
+    require "../Models/Funcion.php";
 
+    use Config\base_datos as base_datos;
     use Models\Funcion as Funcion;
 
 
 
-    class FuncionDao {
+    class FuncionDao 
+    {
 
         
-        private $funcionList = array();
-        private $fileName;
+       
 
         public function __construct()
         {
+           
             
-            $this->fileName = dirname(__DIR__).'/Data/Funciones.json';
-    
-            
-        }
+        }    
 
         function add($funcion){
 
-            $this->readFile();
-            
-            array_push($this->funcionList,$funcion);
-            $this->saveData();
-        }
+            $conexion=base_datos::conectar();
 
-        function getAll(){
-            $this->readFile();
-            return $this->funcionList;
-        }
-
-        function getFileName(){
-            return $this->fileName;
-        }
-
-        function saveData(){
-            $arrayToEncode = array();
-
-            foreach($this->funcionList as $funcion){
-
-                $valuesArray['numero_sala'] = $funcion->getSala();
-                $valuesArray['id_pelicula'] = $funcion->getPelicula();
-                $valuesArray['hora'] = $funcion->getHora();
-
-                array_push($arrayToEncode, $valuesArray);
-
-            }
-
-            $jsonContent = json_encode($arrayToEncode,JSON_PRETTY_PRINT);
 
             
-            file_put_contents($this->fileName,$jsonContent);
+
             
+                $sala=$funcion->getIdSala();
+                $pelicula=$funcion->getIdPelicula();
+                $inicio=$funcion->getHoraInicio();
+                $fin=$funcion->getHoraFin();
+                $dia=$funcion->getDia();
+                $activo=$funcion->getActivo();
+
+                $sql=" INSERT INTO Funcion (Id_sala, Id_pelicula, Hora_inicio, Hora_fin, Dia, Activo) 
+
+                VALUES ('$sala', '$pelicula', '$inicio', '$fin', '$dia', '$activo' )";
+
+                var_dump(base_datos::comprobar_query($conexion, $sql));            
+
             
+            $conexion->close();
+        }   
+
+
+
+       
+
+
+        function getAll()
+        {          
+
+            $conexion=base_datos::conectar();
+            $sql="SELECT * FROM Funcion";            
+
+            $resultado=$conexion->query($sql); 
+
+            $funciones=[];
+            
+            while($fila=$resultado->fetch_assoc()) 
+                array_push($funciones,$this->crearFuncion($fila));
+
+            $conexion->close();
+
+            return $funciones;            
         }
 
-        function readFile()
-        {
 
-        	$this->funcionList = array();
+        function getActivos()
+        {          
 
-        	if(file_exists($this->fileName))
-        	{
-        		$jsonContent = file_get_contents($this->fileName);
+            $conexion=base_datos::conectar();
+            $sql="SELECT * FROM Funcion WHERE ACTIVO=1";            
 
-        		$arrayContent = ($jsonContent) ? json_decode($jsonContent,true) : array();
+            $resultado=$conexion->query($sql); 
 
-        		foreach($arrayContent as $valuesArray)
-        		{
-        			$funcion = new Funcion();
+            $funciones=[];
+            
+            while($fila=$resultado->fetch_assoc()) 
+                array_push($funciones,$this->crearFuncion($fila));
 
-        			$funcion->setSala($valuesArray['numero_sala']);
-        			$funcion->setPelicula($valuesArray['id_pelicula']);
-        			$funcion->setHora($valuesArray['hora']);
+            $conexion->close();
 
-        			array_push($this->funcionList,$funcion);
-        		}
-        	}
+            return $funciones;            
         }
-
-    
-        
 
 
     }
 
 
-  
+
+
+    private function crearFuncion($fila)
+    {
+        $funcion = new Funcion();
+
+
+        $funcion->setIdFuncion($fila['Id_funcion']);
+        $funcion->setIdSala($fila['Id_sala']);
+        $funcion->setIdPelicula($fila['Id_pelicula']);
+        $funcion->setHoraInicio($fila['Hora_inicio']);
+        $funcion->setHoraFin($fila['Hora_fin']);
+        $funcion->setDia($fila['Dia']);
+        $funcion->setActivo($fila['Activo']);
+
+
+        return $funcion;
+    }
+
+
+  /* $funciondao= new FuncionDao();
+
+   
+
+
+    $funcion= new Funcion();
+
+                $funcion->setIdSala(1);
+                $funcion->setIdPelicula(1);
+                $funcion->setHoraInicio("14:30");
+                $funcion->setHoraFin("16:30");
+                $funcion->setDia("1111,11,11");
+                $funcion->setActivo(0);
+
+               // $funciondao->add($funcion);
+
+
+                var_dump($funciondao->getA());*/
 
 
 ?>

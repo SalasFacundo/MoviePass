@@ -4,8 +4,28 @@
 <main class="container-fluid adm-cine-container">
 
     <div class="row adm-cine-row">
-        <div class="col-4"> </div>
-        
+        <div class="col-4">
+
+            <div class="row container-buscar-user">
+
+                <div class="col-12">
+                    <h2>BUSCAR USUARIO</h2>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for=""> DNI DE USIARIO</label>
+                            <input type="number" class="form-control" name="" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Aceptar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+
+        </div>
+
         <div class="col-4">
 
             <div class="row container-form">
