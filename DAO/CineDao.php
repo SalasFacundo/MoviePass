@@ -231,21 +231,21 @@ class CineDao
 
 
 
-                $cineDao = new CineDao();
+                /*$cineDao = new CineDao();
                 
                 var_dump($cineDao->getActivos());
 
 
                 $cine= new Cine();
 
-                $cine->setNombre("Salas");
+                $cine->setNombre("Salas2");
                 $cine->setCalle("Calle1");
                 $cine->setAltura(123);
                 $cine->setCodigoPostal(123);
                 $cine->setCantidadSalas(7);
                 $cine->setActivo(true);
 
-                $cineDao->add($cine);
+                $cineDao->add($cine);*/
 
                 //var_dump($cineDao->traerPorId(1));
 

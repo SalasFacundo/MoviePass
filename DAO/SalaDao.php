@@ -2,7 +2,7 @@
 
     namespace DAO ;
 
-    require "../Config/Base_de_datos.php";
+    require "../Config/Base_datos.php";
     require "../Models/Sala.php";
 
     use Config\base_datos as base_datos;
@@ -31,17 +31,17 @@
 
 
             
-                $Id_sala=$cine->getNombre();
-                $Nombre=$cine->getCalle();
-                $Capacidad=$cine->getAltura();
-                $Precio=$cine->getCodigoPostal();
-                $Id_cine=$cine->getCodigoPostal();
-                $Id_tipo_sala=$cine->getCodigoPostal();
+                
+                $Nombre=$cine->getNombre();
+                $Capacidad=$cine->getCapacidad();
+                $Precio=$cine->getPrecio();
+                $Id_cine=$cine->getIdCine();
+                $Id_tipo_sala=$cine->getIdTipoSala();
                 $activo=$cine->getActivo();
 
-                $sql=" INSERT INTO Sala (Id_sala, Nombre, Capacidad, Precio, Id_cine, Id_tipo_sala, Activo) 
+                $sql=" INSERT INTO Sala (Nombre, Capacidad, Precio, Id_cine, Id_tipo_sala, Activo) 
 
-                VALUES ('$Id_sala', '$Nombre', '$Capacidad', '$Precio', '$Id_cine', '$Id_tipo_sala', '$activo' )";
+                VALUES ('$Nombre', '$Capacidad', '$Precio', '$Id_cine', '$Id_tipo_sala', '$activo' )";
 
                 //var_dump(base_datos::comprobar_query($conexion, $sql));
 
@@ -52,7 +52,9 @@
 
 
         function getAll()
-        {          
+        {      
+
+
 
             $conexion=base_datos::conectar();
             $sql="SELECT * FROM Sala";            
@@ -62,7 +64,7 @@
             $salas=[];
 
              while($fila=$resultado->fetch_assoc())
-                array_push($salas,$this->crearSalas($fila));
+                array_push($salas,$this->crearSala($fila));
 
             $conexion->close();
 
@@ -70,7 +72,7 @@
         }
 
 
-        function getAll()
+        function getActivos()
         {          
 
             $conexion=base_datos::conectar();
@@ -81,7 +83,7 @@
             $salas=[];
 
              while($fila=$resultado->fetch_assoc())
-                array_push($salas,$this->crearSalas($fila));
+                array_push($salas,$this->crearSala($fila));
 
             $conexion->close();
 
@@ -147,11 +149,27 @@
         $sala->setActivo($fila['Activo']);
 
 
-        return $cine;
+        return $sala;
     }
 
        
 
     }
 
+
+/*
+    $saladao=new SalaDao();
+    $sala= new Sala();
+
+        
+        $sala->setNombre("asd98");
+        $sala->setCapacidad("1");
+        $sala->setPrecio("12");
+        $sala->setIdCine("1");
+        $sala->setIdTipoSala("1");
+        $sala->setActivo("activo");
+
+
+        //$saladao->add($sala);
+        var_dump($saladao->getAll());*/
 ?>
