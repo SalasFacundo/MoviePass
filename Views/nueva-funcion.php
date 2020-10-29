@@ -14,18 +14,18 @@
             <div class="row container-form">
                 <div class="col-12">
                     <h2 class="subrayadoh2">NUEVA FUNCION</h2>
-                    <form action="<?= FRONT_ROOT ?>/Home/AddFuncion" method="POST">
+                    <form action="<?= FRONT_ROOT ?>/Home/AddFuncion" method="POST" required>
                         <div class="form-group">
                             <label for=""> CINE</label>
-                            <input type="number" class="form-control" name="cine" placeholder="">
+                            <input type="number" class="form-control" name="cine" required>
                         </div>
                         <div class="form-group">
                             <label for=""> NUMERO DE SALA</label>
-                            <input type="number" class="form-control" name="numeroSala" placeholder="">
+                            <input type="number" class="form-control" name="numeroSala" required>
                         </div>
                         <div class="form-group">
                             <label for="">PELICULA</label>
-                            <select name="pelicula" id="">
+                            <select name="pelicula" id="" required>
                                 <option value="">--Seleccione la Pelicula---</option>
                                 <?php 
                                 echo '<pre>';
@@ -41,7 +41,7 @@
                         </div>
                         <div class="form-group">
                             <label for=""> FECHA Y HORA DE INICIO</label>
-                            <input type="datetime-local" class="form-control" name="fechaHoraInicio" placeholder="">
+                            <input type="datetime-local" class="form-control" name="fechaHoraInicio" required>
                         </div>
                         <button type="submit" class="btn btn-form mb-3">ACEPTAR</button>
                     </form>

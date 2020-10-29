@@ -1,3 +1,18 @@
+<?php 
+
+    use DAO\CineDao as CineDao;
+
+    $cineDao = new CineDao();
+
+    $allCinemas = $cineDao->getAll();
+
+    var_dump($allCinemas);
+
+
+?>
+
+
+
 <html lang="en">
 
 <head>
@@ -36,7 +51,7 @@
 
                 <div class="container-form">
 
-                    <h2>MODIFICAR SUCURSAL</h2>
+                    <h2>MODIFICAR CINE</h2>
 
                     <form action="">
 
@@ -44,7 +59,10 @@
                         <div class="form-group">
                             <label for="">Sucursal</label>
                             <select name="id" id="" class="form-control">
-                                <option value="">--Seleccione una Sucursal--</option>
+                                <option value="">--Seleccionar Cine--</option>
+                                <?php foreach($$allCinemas as $cine)?>
+                                    <option value=<?php echo $cine->getIdCine(); ?>><?php echo $cine->getNombre()?></option>
+                                <?php ?>
                             </select>
                         </div>
 

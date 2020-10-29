@@ -7,8 +7,6 @@ namespace DAO;
 
 
 
-//require "../Config/Base_datos.php";
-//require_once "../Models/Pelicula.php";
 
 use Config\base_datos as base_datos;
 use Models\Pelicula as Pelicula;
@@ -172,7 +170,7 @@ class PeliculaDao
     $peliculadao= new PeliculaDao();
 
     $pelicula= new Pelicula();
-    $pelicula->setTitulo("asd2");
+    $pelicula->setTitulo("fffffffffasdff4asdsafffff");
     $pelicula->setSinopsis("asd");
     $pelicula->setPosterLink("asd");
     $pelicula->setLenguaje("asd");
@@ -180,9 +178,11 @@ class PeliculaDao
     $pelicula->setDuracion("123");
     $pelicula->setActivo("true");
 
-    $peliculadao->add($pelicula);
+    //$peliculadao->add($pelicula);
     //var_dump($peliculadao->getAll());
+
     */
+
 
 
 

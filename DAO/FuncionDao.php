@@ -2,8 +2,8 @@
 
     namespace DAO ;
 
-    require "../Config/Base_de_datos.php";
-    require "../Models/Funcion.php";
+    require_once "../Config/Base_de_datos.php";
+    require_once "../Models/Funcion.php";
 
     use Config\base_datos as base_datos;
     use Models\Funcion as Funcion;
@@ -30,16 +30,15 @@
             
 
             
-                $sala=$funcion->getIdSala();
-                $pelicula=$funcion->getIdPelicula();
-                $inicio=$funcion->getHoraInicio();
-                $fin=$funcion->getHoraFin();
-                $dia=$funcion->getDia();
+                $Id_sala=$funcion->getIdSala();
+                $Id_pelicula=$funcion->getIdPelicula();
+                $Dia_hora_inicio=$funcion->getDiaHoraInicio();
+                $Dia_hora_fin=$funcion->getDiaHoraFin();
                 $activo=$funcion->getActivo();
 
-                $sql=" INSERT INTO Funcion (Id_sala, Id_pelicula, Hora_inicio, Hora_fin, Dia, Activo) 
+                $sql=" INSERT INTO Funcion (Id_sala, Id_pelicula, Dia_hora_inicio, Dia_hora_fin, Activo) 
 
-                VALUES ('$sala', '$pelicula', '$inicio', '$fin', '$dia', '$activo' )";
+                VALUES ('$Id_sala', '$Id_pelicula', '$Dia_hora_inicio', '$Dia_hora_fin', '$activo' )";
 
                 var_dump(base_datos::comprobar_query($conexion, $sql));            
 
@@ -103,9 +102,8 @@
         $funcion->setIdFuncion($fila['Id_funcion']);
         $funcion->setIdSala($fila['Id_sala']);
         $funcion->setIdPelicula($fila['Id_pelicula']);
-        $funcion->setHoraInicio($fila['Hora_inicio']);
-        $funcion->setHoraFin($fila['Hora_fin']);
-        $funcion->setDia($fila['Dia']);
+        $funcion->setDiaHoraInicio($fila['Dia_hora_inicio']);
+        $funcion->setDiaHoraFin($fila['Dia_hora_fin']);
         $funcion->setActivo($fila['Activo']);
 
 

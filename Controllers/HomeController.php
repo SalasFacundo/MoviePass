@@ -35,14 +35,17 @@
         if($_POST){
 
             $id= $_POST['id'];
+            
+            
 
             $pelicula = file_get_contents(
                 "http://api.themoviedb.org/3/movie/".$id."?api_key=a813ce03ea202b120e2307c4325bd6c3&language=en-US");
             
 
             $peliJson = json_decode($pelicula,true);
-            //var_dump($peliJson);
+            
 
+            
 
             $peli = new Pelicula();
             
@@ -54,11 +57,18 @@
             $peli->setLenguaje($peliJson['original_language']);
             $peli->setActivo(true);
 
+            var_dump($peli);
             
             
             $peliDao = new PeliculaDao();
 
             $peliDao->add($peli);
+
+
+            
+           /* echo '<pre>';
+            var_dump($peliDao->getAll());
+            echo '</pre>';*/
 
             $peliculasBD = $peliDao->getAll();
             
@@ -218,8 +228,12 @@
                 $cine = $_POST['cine'];
                 $numeroSala = $_POST['numeroSala'];
                 $pelicula = $_POST['pelicula'];
-                $cine = $_POST['cine'];
                 $fechaHoraInicio = $_POST['fechaHoraInicio'];
+
+                $cine = trim($cine);
+                $numeroSala = trim($numeroSala);
+                $pelicula = trim($pelicula);
+                $fechaHoraInicio = trim($fechaHoraInicio);
 
 
                 $peli = $daoPelicula->traerPorId($pelicula);
@@ -230,12 +244,69 @@
 
 
                 // Comprobar que la fecha y hora de inicio no sea antes a hoy
+                $mañana = time() + (60 * 60 * 24);
+                if(strtotime($fechaHoraInicio) < $mañana){
+                    // no se pueden agregar peliculas con menos de 24hs de anticipacion a la funcion
+                }
+
+
+                // Comprobar que la pelicula no se pase ese dia en otro cine
+
+
+
+
+                
+                // comprobar que halla disponibilidad horaria en la sala
+                $inicioTime = strtotime($fechaHoraInicio,$fechaHoraFin);
+
+                $disponibilidad = comprobarDisponibilidadSala();
+                
+                
+                // Si hay disponibilidad instancio un objeto de tipo funcion y lo agrego a la bbdd de funciones
+                if($disponibilidad){
+
+
+                    $peliDao = new PeliculaDao();
+
+                    $movie = $peliDao->traerPorId($pelicula);
+
+                    $funcionDao = new FuncionDAO();
+                    $funcionDao->add($movie);
+                }
+               
 
 
             }
 
             require_once(VIEWS_PATH."nueva-funcion.php");
 
+        }
+
+
+        function comprobarDisponibilidadSala($fechaInicio, $fechaFin){
+
+            $funcionDao = new FuncionDAO();
+            $allShows = $funcionDao->getAll();
+            $agregar = true;
+    
+    
+            foreach($allShows as $show){
+                
+                $showInicio = strtotime($show->getInicio());
+                $showFin = strtotime($show->getFin());
+                // Si la nueva funcion empieza y termina antes de que empieze la otra
+                if(( $inicio >= $showInicio && $inicio < $showFin  ) || ($fin >= $showInicio && $fin < $showFin )   ) {
+                
+                    $agregar = false;
+            
+                }
+    
+            }
+    
+            return $agregar;
+    
+    
+    
         }
 
         function calcularFechaFinal($fechaInicio, $duracion){

@@ -2,8 +2,8 @@
 
 namespace DAO ;
 
-//require "../Config/Base_de_datos.php";
-//require "../Models/Cine.php";
+//require_once "../Config/base_datos.php";
+//require_once "../Models/Cine.php";
 
 use Config\base_datos as base_datos;
 use Models\Cine as Cine;
@@ -38,11 +38,12 @@ class CineDao
                 $calle=$cine->getCalle();
                 $altura=$cine->getAltura();
                 $codigo=$cine->getCodigoPostal();
+                $salas=$cine->getCantidadSalas();
                 $activo=$cine->getActivo();
 
-                $sql=" INSERT INTO Cine (Nombre, Calle, Altura, Codigo_postal, Activo) 
+                $sql=" INSERT INTO Cine (Nombre, Calle, Altura, Codigo_postal, Cantidad_salas, Activo) 
 
-                VALUES ('$nombre', '$calle', '$altura', '$codigo', '$activo' )";
+                VALUES ('$nombre', '$calle', '$altura', '$codigo', '$salas', '$activo' )";
 
                 var_dump(base_datos::comprobar_query($conexion, $sql));
             
@@ -106,6 +107,7 @@ class CineDao
          $calle=$cineNuevo->getCalle();
          $altura=$cineNuevo->getAltura();
          $codigo=$cineNuevo->getCodigoPostal();
+         $salas=$cineNuevo->getCantidadSalas();
          $activo=$cineNuevo->getActivo();
 
 
@@ -119,6 +121,7 @@ class CineDao
          Calle='$calle',
          Altura='$altura',
          Codigo_postal='$codigo',
+         Cantidad_salas='$salas',
          Activo='$activo'
          WHERE Id_cine='$id';                
 
@@ -212,6 +215,7 @@ class CineDao
         $cine->setCalle($fila['Calle']);
         $cine->setAltura($fila['Altura']);
         $cine->setCodigoPostal($fila['Codigo_postal']);
+        $cine->setCantidadSalas($fila['Cantidad_salas']);
         $cine->setActivo($fila['Activo']);
 
 
@@ -227,26 +231,27 @@ class CineDao
 
 
 
-                /*$cineDao = new CineDao();
+                $cineDao = new CineDao();
                 
                 var_dump($cineDao->getActivos());
 
 
                 $cine= new Cine();
 
-                $cine->setNombre("Nombre3");
+                $cine->setNombre("Salas");
                 $cine->setCalle("Calle1");
                 $cine->setAltura(123);
                 $cine->setCodigoPostal(123);
+                $cine->setCantidadSalas(7);
                 $cine->setActivo(true);
 
                 $cineDao->add($cine);
 
-                var_dump($cineDao->traerPorId(1));
+                //var_dump($cineDao->traerPorId(1));
 
                 //$cineDao->modificarCine(3, $cine);
 
                 //$cineDao->altaBaja(3, true);
-*/
+
                 
                 ?>

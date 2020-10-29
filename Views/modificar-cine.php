@@ -1,4 +1,18 @@
-<?php require_once(VIEWS_PATH."header.php"); ?>
+<?php
+use DAO\CineDao as CineDao;
+
+$cineDao = new CineDao();
+
+$allCinemas = $cineDao->getAll();
+
+var_dump($allCinemas);
+
+
+require_once(VIEWS_PATH."header.php"); 
+
+
+
+?>
 
 
 <main class="container-fluid adm-cine-container">
@@ -12,10 +26,17 @@
                     <h2 class="subrayadoh2">MODIFICAR SUCURSAL</h2>
                     <form action="">
                         <div class="form-group">
-                            <label for=""> LISTA DE SUCURSALES</label>
+                            <label for=""> SELECCIONE EL CINE </label>
+                            <form action="">
                             <select class="form-control">
-                                <option value="">--Seleccione una Sucursal--</option>
+                                <option value="" name="idCine">--Seleccione una Sucursal--</option>
+                                <?php foreach($$allCinemas as $cine)?>
+                                    <option value=<?php echo $cine->getIdCine(); ?>><?php echo $cine->getNombre()?></option>
+                                <?php ?>
                             </select>
+                            <button type="submit" class="btn btn-dark">Modificar</button>
+                            </form>
+                            
                         </div>
                         <div class="form-group">
                             <label for="">NOMBRE CINE</label>
