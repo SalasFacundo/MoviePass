@@ -4,7 +4,7 @@ namespace Models;
 
 use Dao\FuncionDao;
 
-require_once "../DAO/FuncionDao.php";
+//require_once "../DAO/FuncionDao.php";
 
 class Funcion
 {

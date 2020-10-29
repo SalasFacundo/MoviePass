@@ -1,6 +1,7 @@
 <?php
     namespace Controllers;
     use Models\Pelicula as Pelicula;
+    use Models\Funcion as Funcion;
     use Dao\PeliculaDao as PeliculaDao;
     use Dao\CineDao as CineDao;
     use Dao\FuncionDao as FuncionDao;
@@ -70,7 +71,7 @@
             var_dump($peliDao->getAll());
             echo '</pre>';*/
 
-            $peliculasBD = $peliDao->getAll();
+           // $peliculasBD = $peliDao->getAll();
             
             
             require_once(VIEWS_PATH."nueva-funcion.php");
@@ -214,7 +215,7 @@
 
             $peliculasBD = $peliDao->getAll();
 
-            var_dump($peliculasBD);
+            //var_dump($peliculasBD);
 
             require_once(VIEWS_PATH."nueva-funcion.php");
         }
@@ -224,6 +225,8 @@
         public function AddFuncion(){
 
             if($_POST){
+
+                
 
                 $cine = $_POST['cine'];
                 $numeroSala = $_POST['numeroSala'];
@@ -236,10 +239,11 @@
                 $fechaHoraInicio = trim($fechaHoraInicio);
 
 
-                $peli = $daoPelicula->traerPorId($pelicula);
+                $peliculaDao= new PeliculaDao();
+                $peli = $peliculaDao->traerPorId($pelicula);
                 $duracion = $peli->getDuracion();
 
-                $fechaHoraFin = calcularFechaFinal($fechaHoraInicio, $duracion);
+                $fechaHoraFin = $this->calcularFechaFinal($fechaHoraInicio, $duracion);
 
 
 
@@ -259,9 +263,14 @@
                 // comprobar que halla disponibilidad horaria en la sala
                 $inicioTime = strtotime($fechaHoraInicio,$fechaHoraFin);
 
-                $disponibilidad = comprobarDisponibilidadSala();
+
+
+                $disponibilidad = $this->comprobarDisponibilidadSala($inicioTime, $fechaHoraFin );
                 
-                
+
+
+                $fechaHoraFin = date('Y-m-d H:i ',$fechaHoraFin);
+                $fechaHoraFin[10]="T";
                 // Si hay disponibilidad instancio un objeto de tipo funcion y lo agrego a la bbdd de funciones
                 if($disponibilidad){
 
@@ -270,8 +279,22 @@
 
                     $movie = $peliDao->traerPorId($pelicula);
 
+                    
+
+
+                    $funcion = new Funcion();
+                   
+                    $funcion->setIdSala($numeroSala);
+                    $funcion->setIdPelicula($pelicula);
+                    $funcion->setDiaHoraInicio($fechaHoraInicio);
+                    $funcion->setDiaHoraFin($fechaHoraFin);
+                    $funcion->setActivo(true);
+
+                    var_dump($funcion)    ;
+
+
                     $funcionDao = new FuncionDAO();
-                    $funcionDao->add($movie);
+                    $funcionDao->add($funcion);
                 }
                
 
@@ -292,10 +315,10 @@
     
             foreach($allShows as $show){
                 
-                $showInicio = strtotime($show->getInicio());
-                $showFin = strtotime($show->getFin());
+                $showInicio = strtotime($show->getDiaHoraInicio());
+                $showFin = strtotime($show->getDiaHoraFin());
                 // Si la nueva funcion empieza y termina antes de que empieze la otra
-                if(( $inicio >= $showInicio && $inicio < $showFin  ) || ($fin >= $showInicio && $fin < $showFin )   ) {
+                if(( $fechaInicio >= $showInicio && $fechaInicio < $showFin  ) || ($fechaFin >= $showInicio && $fechaFin < $showFin )   ) {
                 
                     $agregar = false;
             

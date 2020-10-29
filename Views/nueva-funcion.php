@@ -1,6 +1,11 @@
 <?php require_once(VIEWS_PATH."header.php"); 
 
 
+ use Dao\PeliculaDao as PeliculaDao;
+
+$peliculadao=new PeliculaDao();
+
+$peliculasBD=$peliculadao->getall();
 
 
 ?>

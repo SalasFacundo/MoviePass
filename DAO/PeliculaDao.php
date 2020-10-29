@@ -4,8 +4,8 @@
 namespace DAO;
 
 
- require_once "../Config/base_datos.php";
-require_once "../Models/Pelicula.php";
+/* require_once "../Config/base_datos.php";
+require_once "../Models/Pelicula.php";*/
 
 
 
@@ -117,7 +117,7 @@ class PeliculaDao
 
         $conexion->close();
 
-        return $cine;  
+        return $pelicula;  
 
     }
 
@@ -152,7 +152,7 @@ class PeliculaDao
                 
                 $pelicula->setIdPelicula($fila['Id_pelicula']);
                 $pelicula->setTitulo($fila['Titulo']);
-                $pelicula->setSinopsis($fila['Sinopsis']);
+                $pelicula->setSinopsis("sinopsis");
                 $pelicula->setPosterLink($fila['Poster_link']);
                 $pelicula->setLenguaje($fila['Lenguaje']);
                 $pelicula->setFechaLanzamiento($fila['Fecha_lanzamiento']);
@@ -179,19 +179,11 @@ class PeliculaDao
     $pelicula->setDuracion("123");
     $pelicula->setActivo("true");
 
-<<<<<<< HEAD
+
     //$peliculadao->add($pelicula);
     //var_dump($peliculadao->getAll());
 
     */
-=======
-    $peliculadao->add($pelicula);
-    var_dump($peliculadao->getAll());
->>>>>>> 20f74da271c479374a7f456065a986b871fa6d7f
-
-*/
-
-
 
 
 

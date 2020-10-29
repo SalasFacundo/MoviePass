@@ -2,8 +2,8 @@
 
     namespace DAO ;
 
-    require "../Config/Base_datos.php";
-    require "../Models/Sala.php";
+  /*  require "../Config/Base_datos.php";
+    require "../Models/Sala.php";*/
 
     use Config\base_datos as base_datos;
     use Models\Sala as Sala;

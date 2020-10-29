@@ -2,8 +2,8 @@
 
     namespace DAO ;
 
-    require_once "../Config/base_datos.php";
-    require_once "../Models/Funcion.php";
+  /*  require_once "../Config/base_datos.php";
+    require_once "../Models/Funcion.php";*/
 
     use Config\base_datos as base_datos;
     use Models\Funcion as Funcion;
@@ -27,9 +27,7 @@
             $conexion=base_datos::conectar();
 
 
-            
-
-            
+                        
                 $Id_sala=$funcion->getIdSala();
                 $Id_pelicula=$funcion->getIdPelicula();
                 $Dia_hora_inicio=$funcion->getDiaHoraInicio();
