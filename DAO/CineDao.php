@@ -231,7 +231,7 @@ class CineDao
 
 
 
-                $cineDao = new CineDao();
+                /*$cineDao = new CineDao();
                 
                 var_dump($cineDao->getActivos());
 
@@ -245,7 +245,7 @@ class CineDao
                 $cine->setCantidadSalas(7);
                 $cine->setActivo(true);
 
-                $cineDao->add($cine);
+                $cineDao->add($cine);*/
 
                 //var_dump($cineDao->traerPorId(1));
 

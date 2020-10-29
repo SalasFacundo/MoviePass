@@ -112,7 +112,9 @@
 
 
 }
-   $funciondao= new FuncionDao();
+
+
+  /* $funciondao= new FuncionDao();
 
    
 
@@ -129,7 +131,7 @@
                 $funciondao->add($funcion);
 
 
-                var_dump($funciondao->getAll());
+                var_dump($funciondao->getAll());*/
 
 
 ?>
