@@ -7,8 +7,7 @@ namespace DAO;
 
 
 
-require "../Config/Base_de_datos.php";
-require_once "../Models/Pelicula.php";
+
 
 use Config\base_datos as base_datos;
 use Models\Pelicula as Pelicula;
@@ -164,7 +163,7 @@ class PeliculaDao
 
 
 
-    $peliculadao= new PeliculaDao();
+   /* $peliculadao= new PeliculaDao();
 
     $pelicula= new Pelicula();
     $pelicula->setTitulo("asd2");
@@ -176,7 +175,7 @@ class PeliculaDao
     $pelicula->setActivo("true");
 
     $peliculadao->add($pelicula);
-    var_dump($peliculadao->getAll());
+    var_dump($peliculadao->getAll());*/
 
 
 
