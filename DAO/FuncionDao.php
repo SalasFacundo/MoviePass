@@ -2,7 +2,7 @@
 
     namespace DAO ;
 
-    require_once "../Config/Base_de_datos.php";
+    require_once "../Config/base_datos.php";
     require_once "../Models/Funcion.php";
 
     use Config\base_datos as base_datos;
@@ -89,7 +89,7 @@
         }
 
 
-    }
+    
 
 
 
@@ -111,24 +111,25 @@
     }
 
 
-  /* $funciondao= new FuncionDao();
+}
+   $funciondao= new FuncionDao();
 
    
 
 
     $funcion= new Funcion();
 
+                $funcion->setIdFuncion(1);
                 $funcion->setIdSala(1);
                 $funcion->setIdPelicula(1);
-                $funcion->setHoraInicio("14:30");
-                $funcion->setHoraFin("16:30");
-                $funcion->setDia("1111,11,11");
+                $funcion->setDiaHoraInicio("14:30");
+                $funcion->setDiaHoraFin("16:30");
                 $funcion->setActivo(0);
 
-               // $funciondao->add($funcion);
+                $funciondao->add($funcion);
 
 
-                var_dump($funciondao->getA());*/
+                var_dump($funciondao->getAll());
 
 
 ?>

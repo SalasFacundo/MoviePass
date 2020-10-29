@@ -238,7 +238,7 @@ class CineDao
 
                 $cine= new Cine();
 
-                $cine->setNombre("Salas");
+                $cine->setNombre("Salas2");
                 $cine->setCalle("Calle1");
                 $cine->setAltura(123);
                 $cine->setCodigoPostal(123);
